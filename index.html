@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Élite Prestations | Votre Agence Événementielle au Gabon</title>
+    <title>Université Gabonaise d'Excellence | Enseignement Supérieur au Gabon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="google-site-verification" content="beie_Kl8KbKOUKTOClkAvA6jQi-GR22CUvpICwKghzI" />
+    <meta name="description" content="Université Gabonaise d'Excellence - Institution d'enseignement supérieur de référence au Gabon">
     <style>
-        /* Splash Screen Styles */
+        /* Splash Screen Styles - Adapté pour une université */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            background: linear-gradient(135deg, #0a2e5c 0%, #1a4a8f 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,7 +40,7 @@
             margin-bottom: 30px;
         }
 
-        .elite {
+        .universite {
             font-size: 4rem;
             font-weight: 800;
             margin-bottom: 0;
@@ -49,7 +49,7 @@
             animation: slideFromTop 1s ease forwards 0.5s;
         }
 
-        .prestations {
+        .excellence {
             font-size: 3rem;
             font-weight: 600;
             margin-top: -10px;
@@ -81,6 +81,7 @@
             font-size: 2rem;
             font-weight: 800;
             opacity: 0;
+            color: #ffd700;
         }
 
         .piece-1 { animation: piece1 1s ease forwards 3s; }
@@ -156,12 +157,12 @@
             100% { transform: translate(100px, 100px) rotate(360deg); opacity: 0; }
         }
 
-        /* Variables et styles de base - Noir et Blanc */
+        /* Variables et styles de base - Couleurs universitaires */
         :root {
-            --primary: #000000;
+            --primary: #0a2e5c;
             --secondary: #ffffff;
-            --accent: #333333;
-            --light: #f8f9fa;
+            --accent: #ffd700;
+            --light: #f0f5ff;
             --gray: #6c757d;
             --light-gray: #e9ecef;
             --transition: all 0.3s ease;
@@ -228,7 +229,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: var(--primary);
+            background: var(--accent);
         }
         
         p {
@@ -267,15 +268,15 @@
             color: var(--secondary);
         }
 
-        .btn-whatsapp {
-            background: #25D366;
-            border-color: #25D366;
-            color: white;
+        .btn-accent {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--primary);
         }
 
-        .btn-whatsapp:hover {
+        .btn-accent:hover {
             background: transparent;
-            color: #25D366;
+            color: var(--accent);
         }
         
         /* Header et Navigation */
@@ -285,13 +286,14 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: var(--secondary);
+            background-color: var(--primary);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
+            color: var(--secondary);
         }
         
         header.scrolled {
-            background-color: var(--secondary);
+            background-color: var(--primary);
             padding: 10px 0;
         }
         
@@ -305,7 +307,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--secondary);
             text-decoration: none;
             letter-spacing: 2px;
         }
@@ -321,7 +323,7 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 500;
             transition: var(--transition);
             text-transform: uppercase;
@@ -337,13 +339,13 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/hero.jpg');
+            background: linear-gradient(rgba(10, 46, 92, 0.8), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -370,7 +372,7 @@
             opacity: 0.9;
         }
         
-        /* Services Section */
+        /* Formations Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -398,12 +400,11 @@
             height: 200px;
             background-size: cover;
             background-position: center;
-            filter: grayscale(100%);
             transition: var(--transition);
         }
         
         .service-card:hover .service-img {
-            filter: grayscale(0%);
+            transform: scale(1.05);
         }
         
         .service-content {
@@ -426,7 +427,7 @@
         }
         
         .service-tag {
-            background: var(--light-gray);
+            background: var(--light);
             color: var(--primary);
             padding: 5px 12px;
             border-radius: 0;
@@ -451,7 +452,7 @@
             content: '■';
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: var(--accent);
             font-size: 0.8rem;
         }
         
@@ -460,7 +461,7 @@
             text-align: center;
         }
         
-        /* Portfolio Section */
+        /* Campus Section */
         .portfolio {
             background-color: var(--light);
         }
@@ -484,7 +485,6 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
-            filter: grayscale(100%);
         }
         
         .portfolio-overlay {
@@ -493,7 +493,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 46, 92, 0.85);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -511,7 +511,6 @@
         
         .portfolio-item:hover .portfolio-img {
             transform: scale(1.1);
-            filter: grayscale(0%);
         }
         
         /* About Section */
@@ -531,15 +530,14 @@
             width: 100%;
             height: auto;
             display: block;
-            filter: grayscale(100%);
             transition: var(--transition);
         }
         
         .about-img:hover img {
-            filter: grayscale(0%);
+            transform: scale(1.05);
         }
         
-        /* Testimonials Section */
+        /* Étudiants Section */
         .testimonials {
             background-color: var(--light);
         }
@@ -653,12 +651,10 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
-            filter: grayscale(100%);
         }
 
         .gallery-item:hover .gallery-img {
             transform: scale(1.1);
-            filter: grayscale(0%);
         }
 
         .gallery-overlay {
@@ -667,7 +663,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 46, 92, 0.85);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -687,8 +683,8 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background: var(--primary);
-            color: var(--secondary);
+            background: var(--accent);
+            color: var(--primary);
             padding: 5px 12px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -752,7 +748,7 @@
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 0 2px rgba(10, 46, 92, 0.1);
         }
         
         textarea.form-control {
@@ -789,7 +785,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background: var(--secondary);
+            background: var(--accent);
         }
         
         .footer-links {
@@ -807,7 +803,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--accent);
             padding-left: 5px;
         }
         
@@ -831,7 +827,7 @@
         }
         
         .social-links a:hover {
-            background: var(--secondary);
+            background: var(--accent);
             color: var(--primary);
             transform: translateY(-5px);
         }
@@ -842,6 +838,37 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             color: #bbb;
+        }
+
+        /* Counter Section */
+        .counter-section {
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .counter-item {
+            padding: 20px;
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .counter-label {
+            font-size: 1.1rem;
+            font-weight: 500;
         }
         
         /* Responsive Design */
@@ -866,11 +893,11 @@
                 grid-template-columns: 1fr;
             }
 
-            .elite {
+            .universite {
                 font-size: 3rem;
             }
 
-            .prestations {
+            .excellence {
                 font-size: 2.5rem;
             }
 
@@ -894,7 +921,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: var(--secondary);
+                background: var(--primary);
                 flex-direction: column;
                 align-items: center;
                 padding-top: 50px;
@@ -922,11 +949,11 @@
                 font-size: 1rem;
             }
 
-            .elite {
+            .universite {
                 font-size: 2.5rem;
             }
 
-            .prestations {
+            .excellence {
                 font-size: 2rem;
             }
 
@@ -961,11 +988,11 @@
                 grid-template-columns: 1fr;
             }
 
-            .elite {
+            .universite {
                 font-size: 2rem;
             }
 
-            .prestations {
+            .excellence {
                 font-size: 1.6rem;
             }
 
@@ -984,18 +1011,18 @@
     <div id="splash-screen">
         <div class="splash-content">
             <div class="main-title">
-                <div class="elite">Elite</div>
-                <div class="prestations">Prestations</div>
+                <div class="universite">Université</div>
+                <div class="excellence">Gabonaise d'Excellence</div>
             </div>
-            <div class="subtitle">Le Meilleur Pour Vous</div>
+            <div class="subtitle">Savoir • Innovation • Développement</div>
         </div>
         <div class="explosion-container">
-            <div class="explosion-piece piece-1">E</div>
-            <div class="explosion-piece piece-2">l</div>
-            <div class="explosion-piece piece-3">i</div>
-            <div class="explosion-piece piece-4">t</div>
-            <div class="explosion-piece piece-5">e</div>
-            <div class="explosion-piece piece-6">!</div>
+            <div class="explosion-piece piece-1">U</div>
+            <div class="explosion-piece piece-2">G</div>
+            <div class="explosion-piece piece-3">E</div>
+            <div class="explosion-piece piece-4">✧</div>
+            <div class="explosion-piece piece-5">☆</div>
+            <div class="explosion-piece piece-6">★</div>
         </div>
     </div>
 
@@ -1003,12 +1030,13 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">ÉLITE PRESTATIONS</a>
+                <a href="#" class="logo">UGE</a>
                 <ul class="nav-links">
                     <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Réalisations</a></li>
+                    <li><a href="#formations">Formations</a></li>
+                    <li><a href="#campus">Campus</a></li>
                     <li><a href="#about">À propos</a></li>
+                    <li><a href="#etudiants">Étudiants</a></li>
                     <li><a href="#gallery">Galerie</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1023,152 +1051,177 @@
     <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
-                <h1>Élégance & Professionnalisme</h1>
-                <p>Élite Prestation, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
-                <a href="#contact" class="btn">Planifier mon événement</a>
+                <h1>Université Gabonaise d'Excellence</h1>
+                <p>Fondée en 2005, l'UGE est une institution d'enseignement supérieur de référence au Gabon, formant les leaders de demain à travers des programmes académiques innovants et une recherche de pointe.</p>
+                <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
+    <!-- Counter Section -->
+    <section class="counter-section">
         <div class="container">
-            <h2>Nos Services Complets</h2>
+            <h2>Notre Université en Chiffres</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="5000">0</div>
+                    <div class="counter-label">Étudiants</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="250">0</div>
+                    <div class="counter-label">Enseignants</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="45">0</div>
+                    <div class="counter-label">Programmes de formation</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="18">0</div>
+                    <div class="counter-label">Partenariats internationaux</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations">
+        <div class="container">
+            <h2>Nos Formations</h2>
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Formation 1 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/SALLE.png');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Location de Salle Événementielle</h3>
-                        <p>Une salle spacieuse et modulable d'une capacité de 200 places, idéale pour tous vos événements.</p>
+                        <h3>Droit et Sciences Politiques</h3>
+                        <p>Formation complète en droit gabonais et international, sciences politiques et relations internationales.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Mariages</span>
-                            <span class="service-tag">Séminaires</span>
-                            <span class="service-tag">Anniversaires</span>
+                            <span class="service-tag">Licence</span>
+                            <span class="service-tag">Master</span>
+                            <span class="service-tag">Doctorat</span>
                         </div>
                         <ul class="service-features">
-                            <li>Capacité : 200 personnes</li>
-                            <li>Espace modulable selon vos besoins</li>
-                            <li>Équipement de base inclus</li>
-                            <li>Localisation stratégique</li>
+                            <li>Droit des affaires et fiscalité</li>
+                            <li>Droit public et constitutionnel</li>
+                            <li>Sciences politiques</li>
+                            <li>Relations internationales</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Réserver la salle</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Formation 2 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/mariage.png');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Organisation de Mariages</h3>
-                        <p>Service complet ou à la carte pour un mariage personnalisé selon vos souhaits et votre budget.</p>
+                        <h3>Économie et Gestion</h3>
+                        <p>Programmes d'excellence en économie, gestion d'entreprise, finance et marketing.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Complet</span>
-                            <span class="service-tag">Sur mesure</span>
-                            <span class="service-tag">À la carte</span>
+                            <span class="service-tag">Bac+3</span>
+                            <span class="service-tag">Bac+5</span>
+                            <span class="service-tag">MBA</span>
                         </div>
                         <ul class="service-features">
-                            <li>Matériel (sono, décoration, etc.)</li>
-                            <li>Service traiteur</li>
-                            <li>Photographie et vidéo</li>
-                            <li>Personnel dédié</li>
+                            <li>Gestion des entreprises</li>
+                            <li>Finance et comptabilité</li>
+                            <li>Marketing digital</li>
+                            <li>Économie du développement</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Organiser mon mariage</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
+                <!-- Formation 3 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/709658739.jpg?k=5c9d4ce038179456a5e2cd6eb153e93061858c89cc11c59fafba28b97b2ac36e&o=');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Appartement Meublé</h3>
-                        <p>Chambre nuptiale ou hébergement confortable avec toutes les commodités pour vos invités.</p>
+                        <h3>Sciences et Technologies</h3>
+                        <p>Formations scientifiques et technologiques de pointe adaptées aux besoins du marché.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Chambre nuptiale</span>
-                            <span class="service-tag">Hébergement</span>
-                            <span class="service-tag">Confort</span>
+                            <span class="service-tag">Ingénierie</span>
+                            <span class="service-tag">Informatique</span>
+                            <span class="service-tag">Recherche</span>
                         </div>
                         <ul class="service-features">
-                            <li>Salon, chambre, douche, cuisine</li>
-                            <li>WiFi haut débit</li>
-                            <li>Accès sécurisé 24h/24</li>
-                            <li>Idéal pour mariages et séjours</li>
+                            <li>Informatique et systèmes</li>
+                            <li>Génie civil et environnement</li>
+                            <li>Biologie et santé</li>
+                            <li>Mathématiques appliquées</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Réserver l'appartement</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
+                <!-- Formation 4 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/NETTOYAGE.png');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Service de Nettoyage</h3>
-                        <p>Nettoyage professionnel avant et après vos événements pour des espaces impeccables.</p>
+                        <h3>Lettres et Sciences Humaines</h3>
+                        <p>Études littéraires, linguistiques et sciences humaines pour une compréhension approfondie des sociétés.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Avant événement</span>
-                            <span class="service-tag">Après événement</span>
-                            <span class="service-tag">Professionnel</span>
+                            <span class="service-tag">Littérature</span>
+                            <span class="service-tag">Linguistique</span>
+                            <span class="service-tag">Histoire</span>
                         </div>
                         <ul class="service-features">
-                            <li>Nettoyage avant événement</li>
-                            <li>Nettoyage après événement</li>
-                            <li>Produits professionnels</li>
-                            <li>Équipe qualifiée</li>
+                            <li>Lettres modernes et classiques</li>
+                            <li>Linguistique et langues africaines</li>
+                            <li>Histoire et archéologie</li>
+                            <li>Sociologie et anthropologie</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 5 -->
+                <!-- Formation 5 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/service.png');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Services Professionnels</h3>
-                        <p>Accueil, protocole et restauration pour vos événements d'entreprise et culturels.</p>
+                        <h3>Santé et Médecine</h3>
+                        <p>Formations médicales et paramédicales répondant aux standards internationaux.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Entreprise</span>
-                            <span class="service-tag">Culturel</span>
-                            <span class="service-tag">Professionnel</span>
+                            <span class="service-tag">Médecine</span>
+                            <span class="service-tag">Santé publique</span>
+                            <span class="service-tag">Recherche</span>
                         </div>
                         <ul class="service-features">
-                            <li>Protocole et accueil</li>
-                            <li>Service pause-café</li>
-                            <li>Service café pour enterrement</li>
-                            <li>Personnel qualifié</li>
+                            <li>Médecine générale</li>
+                            <li>Santé publique</li>
+                            <li>Pharmacie</li>
+                            <li>Sciences infirmières</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Personnaliser mon service</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 6 -->
+                <!-- Formation 6 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('assets/voiture.jpg');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="service-content">
-                        <h3>Transport & Accompagnement</h3>
-                        <p>Solutions de transport et services d'accompagnement pour tous vos déplacements.</p>
+                        <h3>Formations Professionnelles</h3>
+                        <p>Formations continues et professionnelles pour le développement des compétences.</p>
                         <div class="service-tags">
-                            <span class="service-tag">Transport</span>
-                            <span class="service-tag">Accueil aéroport</span>
-                            <span class="service-tag">Accompagnement</span>
+                            <span class="service-tag">Continue</span>
+                            <span class="service-tag">Professionnelle</span>
+                            <span class="service-tag">Certifiante</span>
                         </div>
                         <ul class="service-features">
-                            <li>Transport (bus, véhicules)</li>
-                            <li>Accueil à l'aéroport</li>
-                            <li>Accompagnement événementiel</li>
-                            <li>Service personnalisé</li>
+                            <li>Management et leadership</li>
+                            <li>Digital et nouvelles technologies</li>
+                            <li>Développement personnel</li>
+                            <li>Langues étrangères</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Organiser mon transport</a>
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
                     </div>
                 </div>
@@ -1176,51 +1229,51 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- Campus Section -->
+    <section class="portfolio" id="campus">
         <div class="container">
-            <h2>Nos Réalisations</h2>
+            <h2>Notre Campus</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="assets/ELEGANT.jpg" alt="Mariage élégant" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque universitaire" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Mariage Prestige</h3>
-                        <p>Organisation complète d'un mariage haut de gamme pour 150 invités</p>
+                        <h3>Bibliothèque Centrale</h3>
+                        <p>Plus de 100,000 ouvrages et ressources numériques accessibles 24h/24</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="assets/CONF.jpg" alt="Événement d'entreprise" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratoires de recherche" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Séminaire Corporate</h3>
-                        <p>Organisation d'un séminaire d'entreprise avec protocole pour 200 participants</p>
+                        <h3>Laboratoires de Recherche</h3>
+                        <p>Équipements high-tech pour la recherche scientifique de pointe</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="assets/ANNIV.jpg" alt="Anniversaire" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Amphithéâtres modernes" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Anniversaire Sur Mesure</h3>
-                        <p>Célébration d'anniversaire dans notre salle événementielle pour 80 personnes</p>
+                        <h3>Amphithéâtres Modernes</h3>
+                        <p>Salles de cours équipées des dernières technologies pédagogiques</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="assets/AIRFRANCE.jpg" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Espaces étudiants" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Conférence d'anniversaire</h3>
-                        <p>90 ans d'Air France</p>
+                        <h3>Espaces de Vie Étudiante</h3>
+                        <p>Restauration, détente et activités culturelles sur le campus</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="assets/ACCUEIL.jpg" alt="Conférence internationale" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Installations sportives" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Protocole</h3>
-                        <p>Organisation complète avec hotesses, barmen et sécurité</p>
+                        <h3>Complexe Sportif</h3>
+                        <p>Stade, gymnase et piscine pour les activités sportives universitaires</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="assets/PRIX.jpg" alt="Cérémonie de remise de prix" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Résidences universitaires" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Cérémonie de Prix</h3>
-                        <p>Gala de remise de prix avec dîner et animation pour 250 personnes</p>
+                        <h3>Résidences Universitaires</h3>
+                        <p>Hébergement confortable et sécurisé pour les étudiants</p>
                     </div>
                 </div>
             </div>
@@ -1230,30 +1283,30 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>À Propos de Nous</h2>
+            <h2>À Propos de l'UGE</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Élite Prestations, le meilleur pour vous!</h3>
-                    <p>Forte de plusieurs années d'expérience, Élite Prestations s'est imposée comme la référence en matière d'organisation événementielle au Gabon. Notre approche allie élégance, professionnalisme et attention aux détails.</p>
-                    <p>Nous comprenons l'importance de chaque événement dans votre vie, qu'il s'agisse d'un mariage, d'un séminaire professionnel ou d'une célébration familiale. C'est pourquoi nous nous engageons à rendre chaque moment unique et mémorable.</p>
-                    <p>Notre équipe pluridisciplinaire maîtrise tous les aspects de l'organisation événementielle, de la location d'espaces à l'accompagnement personnalisé, en passant par les services de transport et d'hébergement.</p>
-                    <a href="#contact" class="btn">Travaillons ensemble</a>
+                    <h3>Notre Mission: Former les Leaders de Demain</h3>
+                    <p>Fondée en 2005, l'Université Gabonaise d'Excellence (UGE) s'est imposée comme une institution de référence dans l'enseignement supérieur en Afrique Centrale. Notre mission est de former des professionnels compétents, des chercheurs innovants et des citoyens engagés.</p>
+                    <p>Nous offrons un environnement académique stimulant qui favorise l'excellence, l'innovation et le développement personnel. Nos programmes sont constamment mis à jour pour répondre aux défis du 21ème siècle.</p>
+                    <p>Avec plus de 250 enseignants-chercheurs qualifiés et un réseau de partenaires internationaux, l'UGE prépare ses étudiants à réussir dans un monde globalisé et compétitif.</p>
+                    <a href="#contact" class="btn">Rejoindre l'UGE</a>
                 </div>
                 <div class="about-img">
-                    <img src="assets/about.jpg" alt="Équipe Élite Prestation">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus de l'Université Gabonaise d'Excellence">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- Étudiants Section -->
+    <section class="testimonials" id="etudiants">
         <div class="container">
-            <h2>Témoignages Clients</h2>
+            <h2>Témoignages d'Étudiants</h2>
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="client-img">
-                        <img src="assets/elza.png" alt="Client">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Étudiante">
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -1262,14 +1315,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Élite Prestations a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
-                    <div class="client-name">Elza BOUKANDOU</div>
-                    <div class="client-role">Mariée</div>
+                    <p>"L'UGE m'a offert une formation d'excellence en droit des affaires. Les enseignants sont accessibles et les installations modernes. J'ai décroché un stage dans un cabinet d'avocats international dès ma licence."</p>
+                    <div class="client-name">Aïcha N'Dong</div>
+                    <div class="client-role">Étudiante en Master de Droit</div>
                 </div>
                 
                 <div class="testimonial">
                     <div class="client-img">
-                        <img src="assets/abde.jpg" alt="Client">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Étudiant">
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -1278,14 +1331,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Pour notre séminaire annuel, Élite Prestations a fait un travail remarquable. La logistique, l'accueil, tout était parfait. Nos collaborateurs étaient ravis de l'organisation."</p>
-                    <div class="client-name">Abdelmonem Kaâniche</div>
-                    <div class="client-role">Excutif coach</div>
+                    <p>"Le programme d'ingénierie informatique à l'UGE est exceptionnel. J'ai pu participer à des projets concrets avec des entreprises locales. Aujourd'hui, je travaille comme développeur dans une startup gabonaise."</p>
+                    <div class="client-name">Marc Okouma</div>
+                    <div class="client-role">Diplômé en Informatique</div>
                 </div>
                 
                 <div class="testimonial">
                     <div class="client-img">
-                        <img src="assets/MLB.jpg" alt="Client">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Étudiante">
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -1294,14 +1347,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"L'appartement meublé était parfait pour nos invités étrangers. Propre, sécurisé et bien équipé. Le service d'accueil à l'aéroport a été très apprécié."</p>
-                    <div class="client-name">Marie-Louise Bongo</div>
-                    <div class="client-role">Responsable Événements</div>
+                    <p>"Grâce à l'UGE, j'ai pu effectuer un échange universitaire en France. Cette expérience internationale a été déterminante pour mon parcours. L'université offre de réelles opportunités à l'international."</p>
+                    <div class="client-name">Sarah Boussamba</div>
+                    <div class="client-role">Étudiante en Économie</div>
                 </div>
                 
                 <div class="testimonial">
                     <div class="client-img">
-                        <img src="assets/clav.jpg" alt="Client">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Étudiant">
                     </div>
                     <div class="rating">
                         <i class="fas fa-star"></i>
@@ -1310,41 +1363,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Le service traiteur et l'organisation de notre cocktail d'entreprise étaient impeccables. Les invités ont adoré l'ambiance et la qualité du service."</p>
-                    <div class="client-name">Clavery Yta-mounanga</div>
-                    <div class="client-role">Entrepreneur</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="assets/chantal.jpg" alt="Client">
-                    </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Pour les 50 ans de mon père, Élite Prestations a créé une fête magique. La décoration, l'animation, tout était parfait. Merci pour ce moment inoubliable!"</p>
-                    <div class="client-name">Chantal Ondo</div>
-                    <div class="client-role">Particulière</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="assets/efoua.jpg" alt="Client">
-                    </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Service de nettoyage professionnel après notre événement. La salle était impeccable en un temps record. Je recommande vivement!"</p>
-                    <div class="client-name">Boris EFOUA ABA'A</div>
-                    <div class="client-role">Organisateur d'événements</div>
+                    <p>"La vie associative à l'UGE est très riche. J'ai pu m'engager dans plusieurs clubs et organiser des événements culturels. Cela a développé mes compétences en leadership et en travail d'équipe."</p>
+                    <div class="client-name">Kévin Mba</div>
+                    <div class="client-role">Président du Bureau des Étudiants</div>
                 </div>
             </div>
         </div>
@@ -1353,78 +1374,78 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="container">
-            <h2>Galerie Photos</h2>
+            <h2>Galerie de l'UGE</h2>
             <div class="gallery-filters">
                 <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="mariage">Mariages</button>
-                <button class="filter-btn" data-filter="entreprise">Événements d'entreprise</button>
-                <button class="filter-btn" data-filter="anniversaire">Anniversaires</button>
-                <button class="filter-btn" data-filter="cocktail">Cocktails</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="cours">Cours</button>
+                <button class="filter-btn" data-filter="evenements">Événements</button>
+                <button class="filter-btn" data-filter="sport">Sport</button>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-category="mariage">
-                    <img src="assets/ELEGANT.jpg" alt="Mariage élégant" class="gallery-img">
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque universitaire" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Mariage Élégant</h3>
-                        <p>Cérémonie romantique avec décoration florale</p>
+                        <h3>Bibliothèque Centrale</h3>
+                        <p>Espace de travail et de recherche pour les étudiants</p>
                     </div>
-                    <div class="gallery-category">Mariage</div>
+                    <div class="gallery-category">Campus</div>
                 </div>
-                <div class="gallery-item" data-category="entreprise">
-                    <img src="assets/CONF.jpg" alt="Conférence d'entreprise" class="gallery-img">
+                <div class="gallery-item" data-category="cours">
+                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours en amphithéâtre" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Conférence Corporate</h3>
-                        <p>Séminaire professionnel avec équipement high-tech</p>
+                        <h3>Cours Magistral</h3>
+                        <p>Enseignement dans un amphithéâtre moderne</p>
                     </div>
-                    <div class="gallery-category">Entreprise</div>
+                    <div class="gallery-category">Cours</div>
                 </div>
-                <div class="gallery-item" data-category="anniversaire">
-                    <img src="assets/ANNIV.jpg" alt="Anniversaire festif" class="gallery-img">
+                <div class="gallery-item" data-category="evenements">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cérémonie de remise de diplômes" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Anniversaire Festif</h3>
-                        <p>Célébration avec décoration personnalisée</p>
+                        <h3>Remise de Diplômes</h3>
+                        <p>Cérémonie annuelle de graduation</p>
                     </div>
-                    <div class="gallery-category">Anniversaire</div>
+                    <div class="gallery-category">Événements</div>
                 </div>
-                <div class="gallery-item" data-category="cocktail">
-                    <img src="assets/ACCUEIL.jpg" alt="Cocktail d'entreprise" class="gallery-img">
+                <div class="gallery-item" data-category="sport">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Compétition sportive" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Cocktail d'Entreprise</h3>
-                        <p>Réception avec service de qualité</p>
+                        <h3>Compétition Sportive</h3>
+                        <p>Tournoi inter-universités de football</p>
                     </div>
-                    <div class="gallery-category">Cocktail</div>
+                    <div class="gallery-category">Sport</div>
                 </div>
-                <div class="gallery-item" data-category="mariage">
-                    <img src="assets/PRIX.jpg" alt="Dîner de gala" class="gallery-img">
+                <div class="gallery-item" data-category="cours">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Travaux pratiques en laboratoire" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Dîner de Gala</h3>
-                        <p>Soirée prestigieuse avec service traiteur</p>
+                        <h3>Travaux Pratiques</h3>
+                        <p>Expérimentation en laboratoire de sciences</p>
                     </div>
-                    <div class="gallery-category">Mariage</div>
+                    <div class="gallery-category">Cours</div>
                 </div>
-                <div class="gallery-item" data-category="entreprise">
-                    <img src="assets/AIRFRANCE.jpg" alt="Événement institutionnel" class="gallery-img">
+                <div class="gallery-item" data-category="evenements">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conférence académique" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Événement Institutionnel</h3>
-                        <p>Célébration des 90 ans d'Air France</p>
+                        <h3>Conférence Internationale</h3>
+                        <p>Colloque sur le développement durable</p>
                     </div>
-                    <div class="gallery-category">Entreprise</div>
+                    <div class="gallery-category">Événements</div>
                 </div>
-                <div class="gallery-item" data-category="cocktail">
-                    <img src="assets/service.png" alt="Réception cocktail" class="gallery-img">
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espace de détente" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Réception Cocktail</h3>
-                        <p>Service professionnel et ambiance chaleureuse</p>
+                        <h3>Espace de Détente</h3>
+                        <p>Zone de repos et d'échanges entre étudiants</p>
                     </div>
-                    <div class="gallery-category">Cocktail</div>
+                    <div class="gallery-category">Campus</div>
                 </div>
-                <div class="gallery-item" data-category="anniversaire">
-                    <img src="assets/mariage.png" alt="Fête familiale" class="gallery-img">
+                <div class="gallery-item" data-category="sport">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours d'éducation physique" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Fête Familiale</h3>
-                        <p>Célébration conviviale et personnalisée</p>
+                        <h3>Éducation Physique</h3>
+                        <p>Cours de sport dans le complexe universitaire</p>
                     </div>
-                    <div class="gallery-category">Anniversaire</div>
+                    <div class="gallery-category">Sport</div>
                 </div>
             </div>
         </div>
@@ -1433,7 +1454,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Contactez-Nous</h2>
+            <h2>Contactez l'UGE</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -1442,7 +1463,7 @@
                         </div>
                         <div>
                             <h3>Notre Adresse</h3>
-                            <p>Libreville, Gabon</p>
+                            <p>Boulevard de l'Université, BP 1234<br>Libreville, Gabon</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1451,7 +1472,7 @@
                         </div>
                         <div>
                             <h3>Téléphone</h3>
-                            <p>+241 62 39 11 21</p>
+                            <p>+241 01 23 45 67<br>+241 01 23 45 68</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1460,16 +1481,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>eliteprestationpourvous@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p>Contactez-nous directement via WhatsApp</p>
+                            <p>contact@uge.gabon.edu<br>admissions@uge.gabon.edu</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1478,37 +1490,46 @@
                         </div>
                         <div>
                             <h3>Heures d'Ouverture</h3>
-                            <p>Lun - Ven: 8h00 - 18h00<br>Samedi: 9h00 - 16h00<br>Dimanche: Sur rendez-vous</p>
+                            <p>Lun - Ven: 8h00 - 18h00<br>Samedi: 9h00 - 13h00<br>Dimanche: Fermé</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>Admissions</h3>
+                            <p>Les inscriptions sont ouvertes du 1er mars au 30 juin pour la rentrée de septembre.</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="whatsapp-form">
+                    <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                            <input type="text" class="form-control" id="name" placeholder="Votre nom complet" required>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" id="email" placeholder="Votre email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Sujet" required>
+                            <input type="text" class="form-control" id="phone" placeholder="Votre téléphone" required>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" id="service" required>
-                                <option value="">Service intéressé</option>
-                                <option value="Location de salle">Location de salle</option>
-                                <option value="Organisation de mariage">Organisation de mariage</option>
-                                <option value="Appartement meublé">Appartement meublé</option>
-                                <option value="Service de nettoyage">Service de nettoyage</option>
-                                <option value="Services professionnels">Services professionnels</option>
-                                <option value="Transport & Accompagnement">Transport & Accompagnement</option>
+                            <select class="form-control" id="program" required>
+                                <option value="">Programme intéressé</option>
+                                <option value="Droit">Droit et Sciences Politiques</option>
+                                <option value="Economie">Économie et Gestion</option>
+                                <option value="Sciences">Sciences et Technologies</option>
+                                <option value="Lettres">Lettres et Sciences Humaines</option>
+                                <option value="Santé">Santé et Médecine</option>
+                                <option value="Formation continue">Formations Professionnelles</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" id="message" placeholder="Votre message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer la demande
                         </button>
                     </form>
                 </div>
@@ -1521,49 +1542,52 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>ÉLITE PRESTATION</h3>
-                    <p>Votre partenaire événementiel de confiance au Gabon pour des événements mémorables et réussis.</p>
+                    <h3>UNIVERSITÉ GABONAISE D'EXCELLENCE</h3>
+                    <p>Institution d'enseignement supérieur de référence au Gabon, formant les leaders de demain depuis 2005.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Réalisations</a></li>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#campus">Campus</a></li>
                         <li><a href="#about">À propos</a></li>
+                        <li><a href="#etudiants">Étudiants</a></li>
                         <li><a href="#gallery">Galerie</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Nos Services</h3>
+                    <h3>Nos Formations</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Location de salle</a></li>
-                        <li><a href="#">Organisation de mariages</a></li>
-                        <li><a href="#">Appartement meublé</a></li>
-                        <li><a href="#">Services de nettoyage</a></li>
-                        <li><a href="#">Transport & Accompagnement</a></li>
+                        <li><a href="#">Droit et Sciences Politiques</a></li>
+                        <li><a href="#">Économie et Gestion</a></li>
+                        <li><a href="#">Sciences et Technologies</a></li>
+                        <li><a href="#">Lettres et Sciences Humaines</a></li>
+                        <li><a href="#">Santé et Médecine</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Abonnez-vous pour recevoir nos actualités et offres exclusives.</p>
-                    <form>
+                    <h3>Newsletter Universitaire</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités académiques, événements et opportunités.</p>
+                    <form id="newsletter-form">
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Votre email" required>
                         </div>
-                        <button type="submit" class="btn" style="background: var(--secondary); color: var(--primary);">S'abonner</button>
+                        <button type="submit" class="btn" style="background: var(--accent); color: var(--primary);">S'abonner</button>
                     </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Élite Prestations. Tous droits réservés.</p>
+                <p>&copy; 2025 Université Gabonaise d'Excellence. Tous droits réservés.</p>
+                <p>Développé par le Département d'Informatique de l'UGE</p>
             </div>
         </div>
     </footer>
@@ -1577,6 +1601,32 @@
             setTimeout(() => {
                 splashScreen.classList.add('fade-out');
             }, 4000); // Total animation duration
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.counter-number');
+            const speed = 200; // The lower the slower
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    
+                    // Lower inc to slow and higher to slow
+                    const inc = target / speed;
+                    
+                    // Check if target is reached
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
 
             // Gallery Filtering
             const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1601,49 +1651,43 @@
                 });
             });
 
-            // WhatsApp Form Submission
-            document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+            // Contact Form Submission
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 // Récupération des données du formulaire
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const service = document.getElementById('service').value;
+                const phone = document.getElementById('phone').value;
+                const program = document.getElementById('program').value;
                 const message = document.getElementById('message').value;
                 
-                // Numéro de téléphone Élite Prestations (À MODIFIER)
-                const phoneNumber = "24162391121"; // Remplace par le vrai numéro
+                // Construction du message de confirmation
+                const confirmationMessage = `
+Merci ${name} pour votre demande d'information!
                 
-                // Construction du message formaté
-                const whatsappMessage = `
-*📞 NOUVELLE DEMANDE - ÉLITE PRESTATIONS*
-
-*👤 Nom complet:* ${name}
-*📧 Email:* ${email}
-*🎯 Sujet:* ${subject}
-*🛎️ Service demandé:* ${service}
-*💬 Message:*
-${message}
-
-*📍 Source:* Site web Elite Prestations
-*⏰ Date:* ${new Date().toLocaleString('fr-FR')}
+Nous avons bien reçu votre message concernant le programme "${program}".
+                
+Notre service des admissions vous contactera dans les 48 heures à l'adresse ${email} ou au ${phone}.
+                
+Cordialement,
+Le Service des Admissions
+Université Gabonaise d'Excellence
                 `.trim();
                 
-                // Encodage du message pour URL
-                const encodedMessage = encodeURIComponent(whatsappMessage);
-                
-                // Création du lien WhatsApp
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                // Ouverture dans une nouvelle fenêtre
-                window.open(whatsappURL, '_blank');
+                // Affichage du message de confirmation
+                alert(confirmationMessage);
                 
                 // Réinitialisation du formulaire
                 this.reset();
-                
-                // Message de confirmation
-                alert('✅ Formulaire envoyé! Redirection vers WhatsApp...');
+            });
+
+            // Newsletter Form Submission
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                alert(`Merci! L'adresse ${email} a été ajoutée à notre liste de diffusion.`);
+                this.reset();
             });
         });
 
@@ -1687,4 +1731,4 @@ ${message}
         });
     </script>
 </body>
-</html>
+    </html>

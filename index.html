@@ -3,168 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Université Gabonaise d'Excellence | Enseignement Supérieur au Gabon</title>
+    <title>Institut Panafricain d'Études Appliquées (IPEA) | Gabon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Université Gabonaise d'Excellence - Institution d'enseignement supérieur de référence au Gabon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Institut Panafricain d'Études Appliquées (IPEA) - La garantie d'une formation réussie au Gabon">
     <style>
-        /* Splash Screen Styles - Adapté pour une université */
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0a2e5c 0%, #1a4a8f 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 10;
-            transition: opacity 0.5s ease;
-        }
-
-        #splash-screen.fade-out {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .splash-content {
-            text-align: center;
-            color: white;
-        }
-
-        .main-title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .universite {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0;
-            transform: translateY(-100vh);
-            opacity: 0;
-            animation: slideFromTop 1s ease forwards 0.5s;
-        }
-
-        .excellence {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-top: -10px;
-            transform: translateY(100vh);
-            opacity: 0;
-            animation: slideFromBottom 1s ease forwards 0.5s;
-        }
-
-        .subtitle {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 2s;
-        }
-
-        .explosion-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            animation: explode 1s ease forwards 3s;
-        }
-
-        .explosion-piece {
-            position: absolute;
-            font-size: 2rem;
-            font-weight: 800;
-            opacity: 0;
-            color: #ffd700;
-        }
-
-        .piece-1 { animation: piece1 1s ease forwards 3s; }
-        .piece-2 { animation: piece2 1s ease forwards 3s; }
-        .piece-3 { animation: piece3 1s ease forwards 3s; }
-        .piece-4 { animation: piece4 1s ease forwards 3s; }
-        .piece-5 { animation: piece5 1s ease forwards 3s; }
-        .piece-6 { animation: piece6 1s ease forwards 3s; }
-
-        @keyframes slideFromTop {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideFromBottom {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes explode {
-            0% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-        }
-
-        @keyframes piece1 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-100px, -100px) rotate(-180deg); opacity: 0; }
-        }
-
-        @keyframes piece2 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(100px, -100px) rotate(180deg); opacity: 0; }
-        }
-
-        @keyframes piece3 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-150px, 0) rotate(-270deg); opacity: 0; }
-        }
-
-        @keyframes piece4 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(150px, 0) rotate(270deg); opacity: 0; }
-        }
-
-        @keyframes piece5 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-100px, 100px) rotate(-360deg); opacity: 0; }
-        }
-
-        @keyframes piece6 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(100px, 100px) rotate(360deg); opacity: 0; }
-        }
-
-        /* Variables et styles de base - Couleurs universitaires */
+        /* Variables et styles de base */
         :root {
             --primary: #0a2e5c;
             --secondary: #ffffff;
-            --accent: #ffd700;
+            --accent: #ff6b00;
             --light: #f0f5ff;
+            --dark: #1a237e;
             --gray: #6c757d;
             --light-gray: #e9ecef;
+            --success: #28a745;
             --transition: all 0.3s ease;
         }
         
@@ -181,16 +34,9 @@
         
         body {
             line-height: 1.6;
-            color: var(--primary);
+            color: #333;
             background-color: var(--secondary);
-            opacity: 0;
-            animation: bodyFadeIn 0.5s ease forwards 4s;
-        }
-
-        @keyframes bodyFadeIn {
-            to {
-                opacity: 1;
-            }
+            padding-bottom: 80px;
         }
         
         .container {
@@ -202,6 +48,7 @@
         
         section {
             padding: 80px 0;
+            min-height: calc(100vh - 200px);
         }
         
         h1, h2, h3, h4 {
@@ -211,7 +58,8 @@
         }
         
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
+            color: var(--primary);
         }
         
         h2 {
@@ -219,6 +67,7 @@
             text-align: center;
             margin-bottom: 50px;
             position: relative;
+            color: var(--primary);
         }
         
         h2::after {
@@ -232,17 +81,23 @@
             background: var(--accent);
         }
         
+        h3 {
+            color: var(--dark);
+            font-size: 1.8rem;
+        }
+        
         p {
             margin-bottom: 15px;
+            font-size: 1.1rem;
         }
         
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: var(--primary);
+            background: var(--accent);
             color: var(--secondary);
-            border: 2px solid var(--primary);
-            border-radius: 0;
+            border: 2px solid var(--accent);
+            border-radius: 4px;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
@@ -254,7 +109,7 @@
         
         .btn:hover {
             background: transparent;
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .btn-outline {
@@ -267,16 +122,27 @@
             background: var(--primary);
             color: var(--secondary);
         }
-
-        .btn-accent {
-            background: var(--accent);
-            border-color: var(--accent);
+        
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
             color: var(--primary);
         }
-
-        .btn-accent:hover {
+        
+        .btn-whatsapp {
+            background: #25D366;
+            border-color: #25D366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
             background: transparent;
-            color: var(--accent);
+            color: #25D366;
         }
         
         /* Header et Navigation */
@@ -309,7 +175,13 @@
             font-weight: 800;
             color: var(--secondary);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
         }
         
         .nav-links {
@@ -318,7 +190,7 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
         
         .nav-links a {
@@ -326,13 +198,27 @@
             color: var(--secondary);
             font-weight: 500;
             transition: var(--transition);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
         }
         
         .nav-links a:hover {
             color: var(--accent);
+        }
+        
+        .nav-links a.active {
+            color: var(--accent);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
         }
         
         .menu-toggle {
@@ -345,13 +231,14 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 46, 92, 0.8), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--secondary);
+            padding-top: 80px;
         }
         
         .hero-content {
@@ -360,28 +247,39 @@
         }
         
         .hero h1 {
+            color: var(--secondary);
             margin-bottom: 20px;
-            font-size: 4rem;
+            font-size: 3.5rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        .hero-highlight {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: block;
+            margin: 20px 0;
         }
         
         /* Formations Section */
-        .services-grid {
+        .formations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+            margin-top: 30px;
         }
         
-        .service-card {
+        .formation-card {
             background: var(--secondary);
-            border-radius: 0;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
@@ -391,355 +289,248 @@
             border: 1px solid var(--light-gray);
         }
         
-        .service-card:hover {
+        .formation-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        .service-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            transition: var(--transition);
+        .formation-header {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 20px;
+            text-align: center;
         }
         
-        .service-card:hover .service-img {
-            transform: scale(1.05);
+        .formation-header h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
         
-        .service-content {
+        .formation-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
-        .service-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .service-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 15px 0;
-        }
-        
-        .service-tag {
-            background: var(--light);
-            color: var(--primary);
-            padding: 5px 12px;
-            border-radius: 0;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid var(--accent);
-        }
-        
-        .service-features {
+        .formation-list {
             list-style: none;
             margin: 15px 0;
             flex-grow: 1;
         }
         
-        .service-features li {
-            margin-bottom: 8px;
-            padding-left: 20px;
+        .formation-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
             position: relative;
         }
         
-        .service-features li:before {
-            content: '■';
+        .formation-list li:before {
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--accent);
-            font-size: 0.8rem;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
-        .service-cta {
-            margin-top: auto;
+        .formation-price {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 5px;
             text-align: center;
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
         }
         
-        /* Campus Section */
-        .portfolio {
-            background-color: var(--light);
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 5px 0;
         }
         
-        .portfolio-grid {
+        /* Inscription Section */
+        .inscription-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 0;
-            overflow: hidden;
-            height: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 46, 92, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 20px;
-            text-align: center;
-            color: var(--secondary);
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .about-img {
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Étudiants Section */
-        .testimonials {
-            background-color: var(--light);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
         
-        .testimonial {
-            background: var(--secondary);
+        .inscription-card {
+            background: var(--light);
             padding: 30px;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border: 1px solid var(--light-gray);
             transition: var(--transition);
+            border-top: 4px solid var(--accent);
         }
         
-        .testimonial:hover {
+        .inscription-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .client-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid var(--primary);
-        }
-        
-        .client-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .client-name {
-            font-weight: 600;
-            margin-top: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .client-role {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .rating {
-            color: #ffc107;
-            margin: 10px 0;
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            background-color: var(--secondary);
-        }
-
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .filter-btn {
-            padding: 10px 25px;
-            background: transparent;
-            border: 2px solid var(--primary);
+        .inscription-card h3 {
             color: var(--primary);
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
         }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary);
-            color: var(--secondary);
+        
+        .pieces-list {
+            list-style: none;
         }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
+        
+        .pieces-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
             position: relative;
-            overflow: hidden;
-            height: 280px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
         }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
+        
+        .pieces-list li:before {
+            content: '•';
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 46, 92, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 20px;
-            text-align: center;
-            color: var(--secondary);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-category {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 5px 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: bold;
         }
         
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        
-        .contact-icon {
+        .statistiques {
             background: var(--primary);
             color: var(--secondary);
-            width: 50px;
-            height: 50px;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .stat-label {
             font-size: 1.2rem;
-            flex-shrink: 0;
+            font-weight: 500;
+        }
+        
+        /* Recrutement Section */
+        .recrutement-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .recrutement-intro {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .profils-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .profil-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .profil-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .diplomes-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .diplomes-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .diplomes-list li:before {
+            content: '🎓';
+            position: absolute;
+            left: 0;
+        }
+        
+        .procedure {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .procedure h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .procedure-list {
+            list-style: decimal;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .procedure-list li {
+            margin-bottom: 10px;
+            padding-left: 10px;
         }
         
         .contact-form {
             background: var(--secondary);
             padding: 30px;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--light-gray);
+            margin-top: 30px;
         }
         
         .form-group {
             margin-bottom: 20px;
         }
         
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
         .form-control {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid var(--light-gray);
-            border-radius: 0;
+            border-radius: 4px;
             font-size: 1rem;
             transition: var(--transition);
             background: var(--secondary);
@@ -756,16 +547,25 @@
             resize: vertical;
         }
         
+        .form-file {
+            padding: 8px;
+            background: var(--light);
+            border: 1px dashed var(--gray);
+            border-radius: 4px;
+            text-align: center;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--primary);
             color: var(--secondary);
             padding: 60px 0 20px;
+            margin-top: 50px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -807,6 +607,22 @@
             padding-left: 5px;
         }
         
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
         .social-links {
             display: flex;
             gap: 15px;
@@ -821,7 +637,7 @@
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
             color: var(--secondary);
-            border-radius: 0;
+            border-radius: 4px;
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -839,74 +655,139 @@
             font-size: 0.9rem;
             color: #bbb;
         }
-
-        /* Counter Section */
-        .counter-section {
-            background-color: var(--primary);
+        
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
             color: var(--secondary);
-            padding: 60px 0;
+            font-size: 0.8rem;
+            transition: var(--transition);
+            flex: 1;
             text-align: center;
         }
-
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+        
+        .bottom-nav a i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-
-        .counter-item {
-            padding: 20px;
-        }
-
-        .counter-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+        
+        .bottom-nav a.active {
             color: var(--accent);
         }
-
-        .counter-label {
-            font-size: 1.1rem;
-            font-weight: 500;
+        
+        .bottom-nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Page Navigation */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Page About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-img {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .mission-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .mission-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .mission-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: var(--light);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             
             h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
-            .about-content, .contact-content {
+            .about-content {
                 grid-template-columns: 1fr;
             }
             
-            .about-img {
-                order: -1;
+            .formations-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .bottom-nav {
+                display: flex;
             }
-
-            .universite {
-                font-size: 3rem;
-            }
-
-            .excellence {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.5rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            
+            section {
+                padding: 60px 0;
+                min-height: auto;
+                padding-bottom: 100px;
             }
         }
         
@@ -927,6 +808,7 @@
                 padding-top: 50px;
                 transition: var(--transition);
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
             }
             
             .nav-links.active {
@@ -934,7 +816,7 @@
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 20px 0;
             }
             
             .menu-toggle {
@@ -942,103 +824,140 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
-
-            .universite {
-                font-size: 2.5rem;
-            }
-
-            .excellence {
-                font-size: 2rem;
-            }
-
-            .subtitle {
+            
+            .hero-highlight {
                 font-size: 1.2rem;
             }
-
-            .gallery-filters {
-                gap: 10px;
+            
+            .inscription-content {
+                grid-template-columns: 1fr;
             }
-
-            .filter-btn {
-                padding: 8px 15px;
-                font-size: 0.8rem;
+            
+            .profils-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bottom-nav {
+                padding: 12px 0;
+            }
+            
+            .bottom-nav a {
+                font-size: 0.7rem;
+            }
+            
+            .bottom-nav a i {
+                font-size: 1rem;
             }
         }
         
         @media (max-width: 576px) {
             section {
-                padding: 60px 0;
+                padding: 50px 0;
+                padding-bottom: 100px;
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             h2 {
                 font-size: 1.8rem;
+                margin-bottom: 30px;
             }
             
-            .services-grid, .portfolio-grid {
+            .formations-grid {
                 grid-template-columns: 1fr;
             }
-
-            .universite {
-                font-size: 2rem;
-            }
-
-            .excellence {
-                font-size: 1.6rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .gallery-grid {
+            
+            .stat-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .bottom-nav a span {
+                display: none;
+            }
+            
+            .bottom-nav a i {
+                font-size: 1.3rem;
+                margin-bottom: 0;
+            }
+        }
+        
+        /* QR Code */
+        .qr-code {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 300px;
+            margin: 30px auto;
+        }
+        
+        .qr-code img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        /* Partners Section */
+        .partners {
+            background: var(--light);
+            padding: 60px 0;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .partner-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
         }
     </style>
 </head>
 <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <div class="splash-content">
-            <div class="main-title">
-                <div class="universite">Université</div>
-                <div class="excellence">Gabonaise d'Excellence</div>
-            </div>
-            <div class="subtitle">Savoir • Innovation • Développement</div>
-        </div>
-        <div class="explosion-container">
-            <div class="explosion-piece piece-1">U</div>
-            <div class="explosion-piece piece-2">G</div>
-            <div class="explosion-piece piece-3">E</div>
-            <div class="explosion-piece piece-4">✧</div>
-            <div class="explosion-piece piece-5">☆</div>
-            <div class="explosion-piece piece-6">★</div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">UGE</a>
+                <a href="#accueil" class="logo" data-page="accueil">
+                    <i class="fas fa-graduation-cap"></i> &nbsp;<span>IPEA</span>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#campus">Campus</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#etudiants">Étudiants</a></li>
-                    <li><a href="#gallery">Galerie</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#accueil" class="active" data-page="accueil">Accueil</a></li>
+                    <li><a href="#apropos" data-page="apropos">À propos</a></li>
+                    <li><a href="#formations" data-page="formations">Formations</a></li>
+                    <li><a href="#inscription" data-page="inscription">Inscription</a></li>
+                    <li><a href="#recrutement" data-page="recrutement">Recrutement</a></li>
+                    <li><a href="#contact" data-page="contact">Contact</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -1047,491 +966,507 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="accueil">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Université Gabonaise d'Excellence</h1>
-                <p>Fondée en 2005, l'UGE est une institution d'enseignement supérieur de référence au Gabon, formant les leaders de demain à travers des programmes académiques innovants et une recherche de pointe.</p>
-                <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
-            </div>
-        </div>
-    </section>
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="#accueil" data-page="accueil" class="active">
+            <i class="fas fa-home"></i>
+            <span>Accueil</span>
+        </a>
+        <a href="#apropos" data-page="apropos">
+            <i class="fas fa-info-circle"></i>
+            <span>À propos</span>
+        </a>
+        <a href="#formations" data-page="formations">
+            <i class="fas fa-book-open"></i>
+            <span>Formations</span>
+        </a>
+        <a href="#inscription" data-page="inscription">
+            <i class="fas fa-file-signature"></i>
+            <span>Inscription</span>
+        </a>
+        <a href="#recrutement" data-page="recrutement">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Recrutement</span>
+        </a>
+    </div>
 
-    <!-- Counter Section -->
-    <section class="counter-section">
-        <div class="container">
-            <h2>Notre Université en Chiffres</h2>
-            <div class="counter-grid">
-                <div class="counter-item">
-                    <div class="counter-number" data-target="5000">0</div>
-                    <div class="counter-label">Étudiants</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" data-target="250">0</div>
-                    <div class="counter-label">Enseignants</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" data-target="45">0</div>
-                    <div class="counter-label">Programmes de formation</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" data-target="18">0</div>
-                    <div class="counter-label">Partenariats internationaux</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formations Section -->
-    <section id="formations">
-        <div class="container">
-            <h2>Nos Formations</h2>
-            <div class="services-grid">
-                <!-- Formation 1 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Droit et Sciences Politiques</h3>
-                        <p>Formation complète en droit gabonais et international, sciences politiques et relations internationales.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Licence</span>
-                            <span class="service-tag">Master</span>
-                            <span class="service-tag">Doctorat</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Droit des affaires et fiscalité</li>
-                            <li>Droit public et constitutionnel</li>
-                            <li>Sciences politiques</li>
-                            <li>Relations internationales</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formation 2 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Économie et Gestion</h3>
-                        <p>Programmes d'excellence en économie, gestion d'entreprise, finance et marketing.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Bac+3</span>
-                            <span class="service-tag">Bac+5</span>
-                            <span class="service-tag">MBA</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Gestion des entreprises</li>
-                            <li>Finance et comptabilité</li>
-                            <li>Marketing digital</li>
-                            <li>Économie du développement</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formation 3 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Sciences et Technologies</h3>
-                        <p>Formations scientifiques et technologiques de pointe adaptées aux besoins du marché.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Ingénierie</span>
-                            <span class="service-tag">Informatique</span>
-                            <span class="service-tag">Recherche</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Informatique et systèmes</li>
-                            <li>Génie civil et environnement</li>
-                            <li>Biologie et santé</li>
-                            <li>Mathématiques appliquées</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formation 4 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Lettres et Sciences Humaines</h3>
-                        <p>Études littéraires, linguistiques et sciences humaines pour une compréhension approfondie des sociétés.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Littérature</span>
-                            <span class="service-tag">Linguistique</span>
-                            <span class="service-tag">Histoire</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Lettres modernes et classiques</li>
-                            <li>Linguistique et langues africaines</li>
-                            <li>Histoire et archéologie</li>
-                            <li>Sociologie et anthropologie</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formation 5 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Santé et Médecine</h3>
-                        <p>Formations médicales et paramédicales répondant aux standards internationaux.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Médecine</span>
-                            <span class="service-tag">Santé publique</span>
-                            <span class="service-tag">Recherche</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Médecine générale</li>
-                            <li>Santé publique</li>
-                            <li>Pharmacie</li>
-                            <li>Sciences infirmières</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formation 6 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="service-content">
-                        <h3>Formations Professionnelles</h3>
-                        <p>Formations continues et professionnelles pour le développement des compétences.</p>
-                        <div class="service-tags">
-                            <span class="service-tag">Continue</span>
-                            <span class="service-tag">Professionnelle</span>
-                            <span class="service-tag">Certifiante</span>
-                        </div>
-                        <ul class="service-features">
-                            <li>Management et leadership</li>
-                            <li>Digital et nouvelles technologies</li>
-                            <li>Développement personnel</li>
-                            <li>Langues étrangères</li>
-                        </ul>
-                        <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                        </div>
-                    </div>
+    <!-- Pages -->
+    <!-- Page Accueil -->
+    <section id="accueil" class="page active">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Institut Panafricain d'Études Appliquées</h1>
+                    <p class="hero-highlight">LA GARANTIE D'UNE FORMATION RÉUSSIE!</p>
+                    <p>Fondé pour répondre aux besoins en formation de qualité au Gabon, l'IPEA offre des programmes d'études appliquées dans divers domaines professionnels pour former les leaders de demain.</p>
+                    <a href="#formations" class="btn" data-page="formations">Découvrir nos formations</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Campus Section -->
-    <section class="portfolio" id="campus">
+    <!-- Page À propos -->
+    <section id="apropos" class="page">
         <div class="container">
-            <h2>Notre Campus</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque universitaire" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Bibliothèque Centrale</h3>
-                        <p>Plus de 100,000 ouvrages et ressources numériques accessibles 24h/24</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratoires de recherche" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Laboratoires de Recherche</h3>
-                        <p>Équipements high-tech pour la recherche scientifique de pointe</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Amphithéâtres modernes" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Amphithéâtres Modernes</h3>
-                        <p>Salles de cours équipées des dernières technologies pédagogiques</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Espaces étudiants" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Espaces de Vie Étudiante</h3>
-                        <p>Restauration, détente et activités culturelles sur le campus</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Installations sportives" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Complexe Sportif</h3>
-                        <p>Stade, gymnase et piscine pour les activités sportives universitaires</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1562564055-71e051d33c19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Résidences universitaires" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Résidences Universitaires</h3>
-                        <p>Hébergement confortable et sécurisé pour les étudiants</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>À Propos de l'UGE</h2>
+            <h2>À Propos de l'IPEA</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Notre Mission: Former les Leaders de Demain</h3>
-                    <p>Fondée en 2005, l'Université Gabonaise d'Excellence (UGE) s'est imposée comme une institution de référence dans l'enseignement supérieur en Afrique Centrale. Notre mission est de former des professionnels compétents, des chercheurs innovants et des citoyens engagés.</p>
-                    <p>Nous offrons un environnement académique stimulant qui favorise l'excellence, l'innovation et le développement personnel. Nos programmes sont constamment mis à jour pour répondre aux défis du 21ème siècle.</p>
-                    <p>Avec plus de 250 enseignants-chercheurs qualifiés et un réseau de partenaires internationaux, l'UGE prépare ses étudiants à réussir dans un monde globalisé et compétitif.</p>
-                    <a href="#contact" class="btn">Rejoindre l'UGE</a>
+                    <h3>Notre Mission</h3>
+                    <p>L'Institut Panafricain d'Études Appliquées (IPEA) a été créé pour offrir une formation de qualité adaptée aux besoins du marché de l'emploi au Gabon et en Afrique.</p>
+                    
+                    <p>Notre objectif est de former des professionnels compétents, prêts à intégrer le monde du travail avec des compétences pratiques et théoriques solides.</p>
+                    
+                    <h3 style="margin-top: 30px;">Nos Valeurs</h3>
+                    <ul class="mission-list">
+                        <li><strong>Excellence académique</strong> - Des programmes constamment mis à jour</li>
+                        <li><strong>Pratique professionnelle</strong> - Formation orientée vers le marché du travail</li>
+                        <li><strong>Innovation pédagogique</strong> - Méthodes d'enseignement modernes</li>
+                        <li><strong>Insertion professionnelle</strong> - Accompagnement vers l'emploi</li>
+                        <li><strong>Accessibilité</strong> - Des frais de scolarité adaptés</li>
+                    </ul>
+                    
+                    <a href="#formations" class="btn" data-page="formations" style="margin-top: 20px;">Nos formations</a>
                 </div>
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus de l'Université Gabonaise d'Excellence">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus IPEA">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Étudiants Section -->
-    <section class="testimonials" id="etudiants">
+    <!-- Page Formations -->
+    <section id="formations" class="page">
         <div class="container">
-            <h2>Témoignages d'Étudiants</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Étudiante">
+            <h2>Nos Formations</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.2rem;">Découvrez notre panel de formations professionnelles conçues pour répondre aux besoins du marché</p>
+            
+            <div class="formations-grid">
+                <!-- Sciences de Gestion -->
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <h3>SCIENCES DE GESTION</h3>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="formation-content">
+                        <ul class="formation-list">
+                            <li>Comptabilité-Contrôle de gestion & Audit</li>
+                            <li>Transport & Logistique</li>
+                            <li>Banque-Assurance</li>
+                            <li>Marketing & communication</li>
+                            <li>Qualité Hygiène Sécurité Environnement</li>
+                            <li>Économie verte</li>
+                            <li>Entreprenariat & innovation</li>
+                        </ul>
+                        <div class="formation-price">
+                            <p>Frais d'inscription:</p>
+                            <div class="price">100 000 XAF</div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#inscription" class="btn btn-outline" data-page="inscription">S'inscrire</a>
+                        </div>
                     </div>
-                    <p>"L'UGE m'a offert une formation d'excellence en droit des affaires. Les enseignants sont accessibles et les installations modernes. J'ai décroché un stage dans un cabinet d'avocats international dès ma licence."</p>
-                    <div class="client-name">Aïcha N'Dong</div>
-                    <div class="client-role">Étudiante en Master de Droit</div>
                 </div>
-                
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Étudiant">
+
+                <!-- Sciences Informatiques -->
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <h3>SCIENCES INFORMATIQUES</h3>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="formation-content">
+                        <ul class="formation-list">
+                            <li>Réseau informatique</li>
+                            <li>Développement web</li>
+                            <li>Administration systèmes</li>
+                            <li>Base de données</li>
+                            <li>Sécurité informatique</li>
+                            <li>Développement d'applications</li>
+                        </ul>
+                        <div class="formation-price">
+                            <p>Frais d'inscription:</p>
+                            <div class="price">100 000 XAF</div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#inscription" class="btn btn-outline" data-page="inscription">S'inscrire</a>
+                        </div>
                     </div>
-                    <p>"Le programme d'ingénierie informatique à l'UGE est exceptionnel. J'ai pu participer à des projets concrets avec des entreprises locales. Aujourd'hui, je travaille comme développeur dans une startup gabonaise."</p>
-                    <div class="client-name">Marc Okouma</div>
-                    <div class="client-role">Diplômé en Informatique</div>
                 </div>
-                
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Étudiante">
+
+                <!-- Sciences Juridiques -->
+                <div class="formation-card">
+                    <div class="formation-header">
+                        <h3>SCIENCES JURIDIQUES</h3>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="formation-content">
+                        <ul class="formation-list">
+                            <li>Droit Public</li>
+                            <li>Droit des Affaires</li>
+                            <li>Droit International</li>
+                            <li>Droit des Sociétés</li>
+                            <li>Droit Fiscal</li>
+                            <li>Procédure Judiciaire</li>
+                        </ul>
+                        <div class="formation-price">
+                            <p>Frais d'inscription:</p>
+                            <div class="price">100 000 XAF</div>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#inscription" class="btn btn-outline" data-page="inscription">S'inscrire</a>
+                        </div>
                     </div>
-                    <p>"Grâce à l'UGE, j'ai pu effectuer un échange universitaire en France. Cette expérience internationale a été déterminante pour mon parcours. L'université offre de réelles opportunités à l'international."</p>
-                    <div class="client-name">Sarah Boussamba</div>
-                    <div class="client-role">Étudiante en Économie</div>
                 </div>
-                
-                <div class="testimonial">
-                    <div class="client-img">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Étudiant">
+            </div>
+            
+            <!-- Tarifs détaillés -->
+            <div style="margin-top: 50px; text-align: center;">
+                <h3>Frais de scolarité annuels</h3>
+                <div class="formations-grid" style="margin-top: 30px;">
+                    <div class="formation-card">
+                        <div class="formation-header">
+                            <h3>Licence 1 & 2</h3>
+                        </div>
+                        <div class="formation-content">
+                            <div class="price">700.000 XAF</div>
+                            <p>Par année académique</p>
+                        </div>
                     </div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    
+                    <div class="formation-card">
+                        <div class="formation-header">
+                            <h3>Licence 3</h3>
+                        </div>
+                        <div class="formation-content">
+                            <div class="price">1.150.000 XAF</div>
+                            <p>Par année académique</p>
+                        </div>
                     </div>
-                    <p>"La vie associative à l'UGE est très riche. J'ai pu m'engager dans plusieurs clubs et organiser des événements culturels. Cela a développé mes compétences en leadership et en travail d'équipe."</p>
-                    <div class="client-name">Kévin Mba</div>
-                    <div class="client-role">Président du Bureau des Étudiants</div>
+                    
+                    <div class="formation-card">
+                        <div class="formation-header">
+                            <h3>Master 1</h3>
+                        </div>
+                        <div class="formation-content">
+                            <div class="price">1.000.000 XAF</div>
+                            <p>Par année académique</p>
+                        </div>
+                    </div>
+                    
+                    <div class="formation-card">
+                        <div class="formation-header">
+                            <h3>Master 2</h3>
+                        </div>
+                        <div class="formation-content">
+                            <div class="price">1.350.000 XAF</div>
+                            <p>Par année académique</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <!-- Page Inscription -->
+    <section id="inscription" class="page">
         <div class="container">
-            <h2>Galerie de l'UGE</h2>
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="campus">Campus</button>
-                <button class="filter-btn" data-filter="cours">Cours</button>
-                <button class="filter-btn" data-filter="evenements">Événements</button>
-                <button class="filter-btn" data-filter="sport">Sport</button>
+            <h2>Conditions d'Inscription</h2>
+            
+            <div class="inscription-content">
+                <!-- Licence 1 & 2 -->
+                <div class="inscription-card">
+                    <h3>LICENCE 1 & 2</h3>
+                    <ul class="pieces-list">
+                        <li>1 attestation de BAC (pour inscription en 2ème année)</li>
+                        <li>2 photos d'identité (format numérique)</li>
+                        <li>1 pièce d'état civil (copie légalisée)</li>
+                        <li>2 rames de papier</li>
+                        <li>Frais d'inscription: 100.000 XAF</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://wa.me/241074921291?text=Je%20souhaite%20m'inscrire%20en%20Licence%201%20ou%202%20à%20l'IPEA" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Master -->
+                <div class="inscription-card">
+                    <h3>MASTER</h3>
+                    <ul class="pieces-list">
+                        <li>1 attestation de BAC</li>
+                        <li>1 attestation de réussite de licence ou équivalent</li>
+                        <li>2 photos d'identité (format numérique)</li>
+                        <li>1 pièce d'état civil (copie légalisée)</li>
+                        <li>2 rames de papier</li>
+                        <li>Frais d'inscription: 100.000 XAF</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://wa.me/241074921291?text=Je%20souhaite%20m'inscrire%20en%20Master%20à%20l'IPEA" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programme Exécutif -->
+                <div class="inscription-card">
+                    <h3>PROGRAMME EXÉCUTIF (PE)</h3>
+                    <ul class="pieces-list">
+                        <li>1 attestation de BAC</li>
+                        <li>1 attestation de travail (2 ans d'expérience minimum)</li>
+                        <li>2 photos d'identité (format numérique)</li>
+                        <li>1 pièce d'état civil (copie légalisée)</li>
+                        <li>2 rames de papier</li>
+                        <li>Frais d'inscription: 100.000 XAF</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://wa.me/241074921291?text=Je%20souhaite%20m'inscrire%20au%20Programme%20Exécutif%20à%20l'IPEA" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="campus">
-                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque universitaire" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Bibliothèque Centrale</h3>
-                        <p>Espace de travail et de recherche pour les étudiants</p>
+            
+            <!-- Statistiques -->
+            <div class="statistiques">
+                <h3 style="color: var(--secondary);">Performances en Insertion Professionnelle</h3>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">24%</div>
+                        <div class="stat-label">Entrepreneurs</div>
                     </div>
-                    <div class="gallery-category">Campus</div>
-                </div>
-                <div class="gallery-item" data-category="cours">
-                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours en amphithéâtre" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Cours Magistral</h3>
-                        <p>Enseignement dans un amphithéâtre moderne</p>
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Employés</div>
                     </div>
-                    <div class="gallery-category">Cours</div>
-                </div>
-                <div class="gallery-item" data-category="evenements">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cérémonie de remise de diplômes" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Remise de Diplômes</h3>
-                        <p>Cérémonie annuelle de graduation</p>
+                    <div class="stat-item">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">En quête d'emploi</div>
                     </div>
-                    <div class="gallery-category">Événements</div>
-                </div>
-                <div class="gallery-item" data-category="sport">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Compétition sportive" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Compétition Sportive</h3>
-                        <p>Tournoi inter-universités de football</p>
+                    <div class="stat-item">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Réorientation</div>
                     </div>
-                    <div class="gallery-category">Sport</div>
                 </div>
-                <div class="gallery-item" data-category="cours">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Travaux pratiques en laboratoire" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Travaux Pratiques</h3>
-                        <p>Expérimentation en laboratoire de sciences</p>
+            </div>
+            
+            <!-- QR Code -->
+            <div class="qr-code">
+                <h3>Scannez-moi!</h3>
+                <div style="background: white; padding: 20px; display: inline-block; border-radius: 8px;">
+                    <div style="width: 150px; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #666; margin: 0 auto;">
+                        [QR CODE - SCANNEZ POUR PLUS D'INFO]
                     </div>
-                    <div class="gallery-category">Cours</div>
                 </div>
-                <div class="gallery-item" data-category="evenements">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conférence académique" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Conférence Internationale</h3>
-                        <p>Colloque sur le développement durable</p>
-                    </div>
-                    <div class="gallery-category">Événements</div>
-                </div>
-                <div class="gallery-item" data-category="campus">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espace de détente" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Espace de Détente</h3>
-                        <p>Zone de repos et d'échanges entre étudiants</p>
-                    </div>
-                    <div class="gallery-category">Campus</div>
-                </div>
-                <div class="gallery-item" data-category="sport">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours d'éducation physique" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Éducation Physique</h3>
-                        <p>Cours de sport dans le complexe universitaire</p>
-                    </div>
-                    <div class="gallery-category">Sport</div>
-                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;">PRINTME: 074 089148</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Page Recrutement -->
+    <section id="recrutement" class="page">
         <div class="container">
-            <h2>Contactez l'UGE</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Notre Adresse</h3>
-                            <p>Boulevard de l'Université, BP 1234<br>Libreville, Gabon</p>
-                        </div>
+            <h2>Recrutement Enseignants</h2>
+            
+            <div class="recrutement-content">
+                <div class="recrutement-intro">
+                    <p>L'Institut Panafricain d'Études Appliquées recherche des enseignants passionnés et qualifiés pour rejoindre notre équipe pédagogique. Nous offrons un environnement de travail stimulant et des opportunités de développement professionnel.</p>
+                </div>
+                
+                <h3 style="text-align: center; margin-bottom: 30px;">Profils Recherchés</h3>
+                
+                <div class="profils-grid">
+                    <!-- Profil 1 -->
+                    <div class="profil-card">
+                        <h3>Sciences de Gestion</h3>
+                        <p>Enseignants pour les filières :</p>
+                        <ul class="diplomes-list">
+                            <li>Comptabilité & Audit (Licence 3)</li>
+                            <li>Marketing Digital (Master 1)</li>
+                            <li>Logistique & Transport (Licence 2)</li>
+                            <li>Banque & Assurance (Master 2)</li>
+                        </ul>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Téléphone</h3>
-                            <p>+241 01 23 45 67<br>+241 01 23 45 68</p>
-                        </div>
+                    
+                    <!-- Profil 2 -->
+                    <div class="profil-card">
+                        <h3>Sciences Informatiques</h3>
+                        <p>Enseignants pour les filières :</p>
+                        <ul class="diplomes-list">
+                            <li>Développement Web (Licence 2)</li>
+                            <li>Réseaux Informatiques (Licence 3)</li>
+                            <li>Sécurité Informatique (Master 1)</li>
+                            <li>Base de Données (Master 2)</li>
+                        </ul>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>contact@uge.gabon.edu<br>admissions@uge.gabon.edu</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h3>Heures d'Ouverture</h3>
-                            <p>Lun - Ven: 8h00 - 18h00<br>Samedi: 9h00 - 13h00<br>Dimanche: Fermé</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h3>Admissions</h3>
-                            <p>Les inscriptions sont ouvertes du 1er mars au 30 juin pour la rentrée de septembre.</p>
-                        </div>
+                    
+                    <!-- Profil 3 -->
+                    <div class="profil-card">
+                        <h3>Sciences Juridiques</h3>
+                        <p>Enseignants pour les filières :</p>
+                        <ul class="diplomes-list">
+                            <li>Droit des Affaires (Licence 3)</li>
+                            <li>Droit Public (Master 1)</li>
+                            <li>Droit International (Master 2)</li>
+                            <li>Droit Fiscal (Licence 2)</li>
+                        </ul>
                     </div>
                 </div>
+                
+                <!-- Diplômes nécessaires -->
+                <div class="procedure">
+                    <h3>Diplômes Nécessaires</h3>
+                    <ul class="diplomes-list">
+                        <li><strong>BAC + minimum 5 ans</strong> pour enseigner en Licence</li>
+                        <li><strong>Doctorat ou équivalent</strong> pour enseigner en Master</li>
+                        <li>Expérience professionnelle dans le domaine enseigné</li>
+                        <li>Expérience pédagogique appréciée</li>
+                        <li>Publications scientifiques pour les enseignants-chercheurs</li>
+                    </ul>
+                </div>
+                
+                <!-- Procédure pour postuler -->
+                <div class="procedure">
+                    <h3>Procédure pour Postuler</h3>
+                    <ol class="procedure-list">
+                        <li>Contacter le service recrutement via WhatsApp au 074 92 12 91</li>
+                        <li>Envoyer un message avec vos informations personnelles</li>
+                        <li>Joindre les documents suivants :
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>Une photo d'identité récente</li>
+                                <li>Un acte de naissance</li>
+                                <li>Une lettre de motivation</li>
+                                <li>Un CV détaillé</li>
+                                <li>Copie des diplômes</li>
+                            </ul>
+                        </li>
+                        <li>Attendre la confirmation de réception</li>
+                        <li>Un entretien sera programmé sous 7 jours ouvrables</li>
+                    </ol>
+                </div>
+                
+                <!-- Formulaire de contact -->
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <h3 style="text-align: center;">Formulaire de Candidature</h3>
+                    <form id="recruitment-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Votre nom complet" required>
+                            <label class="form-label" for="recruit-name">Nom Complet</label>
+                            <input type="text" class="form-control" id="recruit-name" placeholder="Votre nom complet" required>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                            <label class="form-label" for="recruit-phone">Téléphone</label>
+                            <input type="tel" class="form-control" id="recruit-phone" placeholder="Votre numéro de téléphone" required>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" class="form-control" id="phone" placeholder="Votre téléphone" required>
+                            <label class="form-label" for="recruit-email">Email</label>
+                            <input type="email" class="form-control" id="recruit-email" placeholder="Votre adresse email" required>
                         </div>
+                        
                         <div class="form-group">
-                            <select class="form-control" id="program" required>
-                                <option value="">Programme intéressé</option>
-                                <option value="Droit">Droit et Sciences Politiques</option>
-                                <option value="Economie">Économie et Gestion</option>
-                                <option value="Sciences">Sciences et Technologies</option>
-                                <option value="Lettres">Lettres et Sciences Humaines</option>
-                                <option value="Santé">Santé et Médecine</option>
-                                <option value="Formation continue">Formations Professionnelles</option>
+                            <label class="form-label" for="recruit-filiere">Filière d'enseignement</label>
+                            <select class="form-control" id="recruit-filiere" required>
+                                <option value="">Sélectionnez une filière</option>
+                                <option value="Sciences de Gestion">Sciences de Gestion</option>
+                                <option value="Sciences Informatiques">Sciences Informatiques</option>
+                                <option value="Sciences Juridiques">Sciences Juridiques</option>
                             </select>
                         </div>
+                        
                         <div class="form-group">
-                            <textarea class="form-control" id="message" placeholder="Votre message" required></textarea>
+                            <label class="form-label" for="recruit-niveau">Niveau d'enseignement</label>
+                            <select class="form-control" id="recruit-niveau" required>
+                                <option value="">Sélectionnez un niveau</option>
+                                <option value="Licence 1 & 2">Licence 1 & 2</option>
+                                <option value="Licence 3">Licence 3</option>
+                                <option value="Master 1">Master 1</option>
+                                <option value="Master 2">Master 2</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn">
-                            <i class="fas fa-paper-plane"></i> Envoyer la demande
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="recruit-cv">CV et Documents</label>
+                            <div class="form-file">
+                                <p>Joignez votre CV, lettre de motivation et diplômes via WhatsApp après envoi du formulaire</p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="recruit-message">Message de motivation</label>
+                            <textarea class="form-control" id="recruit-message" placeholder="Présentez-vous et expliquez votre motivation pour rejoindre l'IPEA..." rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Envoyer la candidature via WhatsApp
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Contact -->
+    <section id="contact" class="page">
+        <div class="container">
+            <h2>Contactez l'IPEA</h2>
+            
+            <div class="inscription-content">
+                <div class="inscription-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
+                    <p>Charbonnages, ancien lycée Khadafi<br>
+                    B.P. 9031 Libreville-Gabon</p>
+                </div>
+                
+                <div class="inscription-card">
+                    <h3><i class="fas fa-phone"></i> Téléphones</h3>
+                    <p>074 92 12 91<br>
+                    062 15 41 47</p>
+                </div>
+                
+                <div class="inscription-card">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>ipea.gabon@gmail.com</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>Agrément Ministériel</h3>
+                <p style="background: var(--light); padding: 20px; border-radius: 8px; display: inline-block;">
+                    N°000810/MESPSTI/CAB-IJ
+                </p>
+            </div>
+            
+            <!-- QR Code Contact -->
+            <div class="qr-code">
+                <h3>Contactez-nous rapidement</h3>
+                <div style="background: white; padding: 20px; display: inline-block; border-radius: 8px;">
+                    <div style="width: 150px; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #666; margin: 0 auto;">
+                        [QR CODE - CONTACT IPEA]
+                    </div>
+                </div>
+                <p style="margin-top: 15px;">
+                    <a href="https://wa.me/241074921291" class="btn btn-whatsapp" target="_blank" style="margin: 10px;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:+241074921291" class="btn btn-primary" style="margin: 10px;">
+                        <i class="fas fa-phone"></i> Appeler
+                    </a>
+                </p>
+            </div>
+            
+            <!-- Partners Section -->
+            <div class="partners">
+                <h3 style="text-align: center; color: var(--primary);">Elles nous font confiance</h3>
+                <div class="partners-grid">
+                    <div class="partner-logo">
+                        <div style="font-weight: bold; color: var(--primary);">ENTREPRISES GABONAISES</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div style="font-weight: bold; color: var(--primary);">INSTITUTIONS PUBLIQUES</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div style="font-weight: bold; color: var(--primary);">ORGANISATIONS INTERNATIONALES</div>
+                    </div>
+                    <div class="partner-logo">
+                        <div style="font-weight: bold; color: var(--primary);">STARTUPS INNOVANTES</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1542,190 +1477,196 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>UNIVERSITÉ GABONAISE D'EXCELLENCE</h3>
-                    <p>Institution d'enseignement supérieur de référence au Gabon, formant les leaders de demain depuis 2005.</p>
+                    <h3>INSTITUT PANAFRICAIN D'ÉTUDES APPLIQUÉES</h3>
+                    <p>La garantie d'une formation réussie au Gabon depuis plusieurs années. Formation professionnelle d'excellence adaptée aux besoins du marché.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/241074921291" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#formations">Formations</a></li>
-                        <li><a href="#campus">Campus</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#etudiants">Étudiants</a></li>
-                        <li><a href="#gallery">Galerie</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#accueil" data-page="accueil">Accueil</a></li>
+                        <li><a href="#apropos" data-page="apropos">À propos</a></li>
+                        <li><a href="#formations" data-page="formations">Formations</a></li>
+                        <li><a href="#inscription" data-page="inscription">Inscription</a></li>
+                        <li><a href="#recrutement" data-page="recrutement">Recrutement</a></li>
+                        <li><a href="#contact" data-page="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Nos Formations</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Droit et Sciences Politiques</a></li>
-                        <li><a href="#">Économie et Gestion</a></li>
-                        <li><a href="#">Sciences et Technologies</a></li>
-                        <li><a href="#">Lettres et Sciences Humaines</a></li>
-                        <li><a href="#">Santé et Médecine</a></li>
+                    <h3>Contact</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Charbonnages, ancien lycée Khadafi<br>B.P. 9031 Libreville-Gabon</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>074 92 12 91<br>062 15 41 47</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>ipea.gabon@gmail.com</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter Universitaire</h3>
-                    <p>Abonnez-vous pour recevoir nos actualités académiques, événements et opportunités.</p>
-                    <form id="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        <button type="submit" class="btn" style="background: var(--accent); color: var(--primary);">S'abonner</button>
-                    </form>
+                    <h3>Agrément</h3>
+                    <p>Établissement agréé par le Ministère de l'Enseignement Supérieur</p>
+                    <p style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 4px; font-size: 0.9rem;">
+                        N°000810/MESPSTI/CAB-IJ
+                    </p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Université Gabonaise d'Excellence. Tous droits réservés.</p>
-                <p>Développé par le Département d'Informatique de l'UGE</p>
+                <p>&copy; 2025 Institut Panafricain d'Études Appliquées (IPEA). Tous droits réservés.</p>
+                <p>Site développé pour la promotion des formations professionnelles au Gabon</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Splash Screen Animation
+        // Navigation entre pages
         document.addEventListener('DOMContentLoaded', function() {
-            const splashScreen = document.getElementById('splash-screen');
+            const navLinks = document.querySelectorAll('.nav-links a, .bottom-nav a, .logo[data-page]');
+            const pages = document.querySelectorAll('.page');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinksContainer = document.querySelector('.nav-links');
+            const header = document.getElementById('header');
             
-            // Hide splash screen after animations complete
-            setTimeout(() => {
-                splashScreen.classList.add('fade-out');
-            }, 4000); // Total animation duration
-
-            // Counter Animation
-            const counters = document.querySelectorAll('.counter-number');
-            const speed = 200; // The lower the slower
-            
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    
-                    // Lower inc to slow and higher to slow
-                    const inc = target / speed;
-                    
-                    // Check if target is reached
-                    if (count < target) {
-                        // Add inc to count and output in counter
-                        counter.innerText = Math.ceil(count + inc);
-                        // Call function every ms
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                
-                updateCount();
+            // Gestion du menu mobile
+            menuToggle.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('active');
             });
-
-            // Gallery Filtering
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
+            
+            // Navigation entre pages
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
                     
-                    const filter = btn.getAttribute('data-filter');
+                    const pageId = this.getAttribute('data-page') || this.getAttribute('href').substring(1);
                     
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
+                    // Masquer toutes les pages
+                    pages.forEach(page => {
+                        page.classList.remove('active');
                     });
+                    
+                    // Afficher la page sélectionnée
+                    const targetPage = document.getElementById(pageId);
+                    if (targetPage) {
+                        targetPage.classList.add('active');
+                        
+                        // Fermer le menu mobile si ouvert
+                        navLinksContainer.classList.remove('active');
+                        
+                        // Mettre à jour les liens actifs
+                        navLinks.forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+                        
+                        this.classList.add('active');
+                        
+                        // Mettre à jour la bottom nav
+                        document.querySelectorAll('.bottom-nav a').forEach(bottomLink => {
+                            bottomLink.classList.remove('active');
+                            if (bottomLink.getAttribute('data-page') === pageId) {
+                                bottomLink.classList.add('active');
+                            }
+                        });
+                    }
                 });
             });
-
-            // Contact Form Submission
-            document.getElementById('contact-form').addEventListener('submit', function(e) {
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Form de recrutement
+            document.getElementById('recruitment-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 // Récupération des données du formulaire
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const phone = document.getElementById('phone').value;
-                const program = document.getElementById('program').value;
-                const message = document.getElementById('message').value;
+                const name = document.getElementById('recruit-name').value;
+                const phone = document.getElementById('recruit-phone').value;
+                const email = document.getElementById('recruit-email').value;
+                const filiere = document.getElementById('recruit-filiere').value;
+                const niveau = document.getElementById('recruit-niveau').value;
+                const message = document.getElementById('recruit-message').value;
                 
-                // Construction du message de confirmation
-                const confirmationMessage = `
-Merci ${name} pour votre demande d'information!
-                
-Nous avons bien reçu votre message concernant le programme "${program}".
-                
-Notre service des admissions vous contactera dans les 48 heures à l'adresse ${email} ou au ${phone}.
-                
-Cordialement,
-Le Service des Admissions
-Université Gabonaise d'Excellence
+                // Construction du message WhatsApp
+                const whatsappMessage = `
+*CANDIDATURE ENSEIGNANT - IPEA*
+
+*👤 Nom complet:* ${name}
+*📞 Téléphone:* ${phone}
+*📧 Email:* ${email}
+*🎓 Filière:* ${filiere}
+*📚 Niveau:* ${niveau}
+
+*📝 Message de motivation:*
+${message}
+
+*📍 Source:* Site web IPEA
+*⏰ Date:* ${new Date().toLocaleString('fr-FR')}
+
+*Merci de joindre votre CV, lettre de motivation, photo et diplômes.*
                 `.trim();
                 
-                // Affichage du message de confirmation
-                alert(confirmationMessage);
+                // Encodage du message pour URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
                 
-                // Réinitialisation du formulaire
-                this.reset();
+                // Numéro WhatsApp IPEA
+                const phoneNumber = "241074921291";
+                
+                // Création du lien WhatsApp
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Ouverture dans une nouvelle fenêtre
+                window.open(whatsappURL, '_blank');
+                
+                // Message de confirmation
+                alert('✅ Candidature envoyée! Redirection vers WhatsApp pour joindre les documents...');
             });
-
-            // Newsletter Form Submission
-            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                alert(`Merci! L'adresse ${email} a été ajoutée à notre liste de diffusion.`);
-                this.reset();
-            });
-        });
-
-        // Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            
+            // Au chargement, afficher la page active selon l'URL
+            const currentHash = window.location.hash.substring(1) || 'accueil';
+            const currentPage = document.getElementById(currentHash);
+            
+            if (currentPage) {
+                pages.forEach(page => page.classList.remove('active'));
+                currentPage.classList.add('active');
+                
+                // Mettre à jour les liens actifs
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('data-page') || link.getAttribute('href').substring(1);
+                    if (linkPage === currentHash) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Mettre à jour la bottom nav
+                document.querySelectorAll('.bottom-nav a').forEach(bottomLink => {
+                    bottomLink.classList.remove('active');
+                    if (bottomLink.getAttribute('data-page') === currentHash) {
+                        bottomLink.classList.add('active');
+                    }
+                });
             }
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
+            
+            // Fermer le menu en cliquant en dehors
+            document.addEventListener('click', function(e) {
+                if (!navLinksContainer.contains(e.target) && !menuToggle.contains(e.target) && navLinksContainer.classList.contains('active')) {
+                    navLinksContainer.classList.remove('active');
                 }
             });
         });

@@ -161,9 +161,9 @@
         }
         
         .logo-img {
-            height: 50px;
+            height: 60px;
             width: auto;
-            border-radius: 5px;
+            object-fit: contain;
         }
         
         .logo-text {
@@ -226,7 +226,7 @@
         
         /* Page Accueil */
         #accueil {
-            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -241,6 +241,9 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 100px 0;
+            background-color: rgba(10, 46, 92, 0.7);
+            border-radius: 10px;
+            padding: 50px;
         }
         
         .hero-content h1 {
@@ -536,66 +539,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        /* Étudiants Section */
-        .testimonials-section {
-            padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .testimonial {
-            background: var(--secondary);
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            border: 1px solid var(--light-gray);
-            border-radius: 10px;
-            transition: var(--transition);
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .client-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid var(--primary);
-        }
-        
-        .client-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .client-name {
-            font-weight: 600;
-            margin-top: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .client-role {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .rating {
-            color: #ffc107;
-            margin: 10px 0;
-        }
-        
         /* Gallery Section */
         .gallery-section {
             padding: 100px 0;
@@ -701,7 +644,7 @@
         /* Contact Section */
         .contact-section {
             padding: 100px 0;
-            background: linear-gradient(rgba(10, 46, 92, 0.9), rgba(10, 46, 92, 0.95)), url('https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(10, 46, 92, 0.9), rgba(10, 46, 92, 0.95)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -946,7 +889,6 @@
                 order: -1;
             }
             
-            .testimonials-grid,
             .profiles-grid {
                 grid-template-columns: 1fr;
             }
@@ -1037,7 +979,11 @@
             }
             
             .logo-img {
-                height: 40px;
+                height: 50px;
+            }
+            
+            .hero-content {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -1048,7 +994,7 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo-container">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Logo IPEA" class="logo-img">
+                    <img src="logo.png" alt="Logo IPEA" class="logo-img">
                     <div class="logo-text">
                         <a href="#accueil" class="logo">IP<span>EA</span></a>
                         <div class="logo-subtitle">Institut Panafricain des Études Appliquées</div>
@@ -1058,7 +1004,6 @@
                     <li><a href="#accueil" class="nav-link active">Accueil</a></li>
                     <li><a href="#formations" class="nav-link">Formations</a></li>
                     <li><a href="#recrutement" class="nav-link">Recrutement</a></li>
-                    <li><a href="#etudiants" class="nav-link">Étudiants</a></li>
                     <li><a href="#gallery" class="nav-link">Galerie</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -1102,7 +1047,7 @@
                         </ul>
                     </div>
                     <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Campus de l'IPEA">
+                        <img src="logo.png" alt="Logo IPEA">
                     </div>
                 </div>
             </div>
@@ -1167,7 +1112,7 @@
                 <div class="formations-grid">
                     <!-- Sciences de Gestion -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="formation-img" style="background-image: url('logo.png');"></div>
                         <div class="formation-content">
                             <h3>Sciences de Gestion</h3>
                             <p>Formation complète en gestion d'entreprise, finance, marketing et management.</p>
@@ -1191,7 +1136,7 @@
 
                     <!-- Sciences Informatiques -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="formation-img" style="background-image: url('logo.png');"></div>
                         <div class="formation-content">
                             <h3>Sciences Informatiques</h3>
                             <p>Formations techniques en développement, réseaux et sécurité informatique.</p>
@@ -1215,7 +1160,7 @@
 
                     <!-- Sciences Juridiques -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                        <div class="formation-img" style="background-image: url('logo.png');"></div>
                         <div class="formation-content">
                             <h3>Sciences Juridiques</h3>
                             <p>Programmes d'excellence en droit gabonais, international et des affaires.</p>
@@ -1412,66 +1357,10 @@
                             </form>
                             
                             <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray);">
-                                Numéro de contact : +241 01 23 45 67<br>
+                                Numéro de contact : +241 07 49 21 291<br>
                                 Email : recrutement@ipea.education
                             </p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Étudiants Section -->
-        <section id="etudiants" class="page-section testimonials-section">
-            <div class="container">
-                <h2>Témoignages d'Étudiants</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Étudiante">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"La formation en Comptabilité-Control de gestion à l'IPEA m'a offert une base solide théorique et pratique. J'ai été recrutée avant même l'obtention de mon diplôme."</p>
-                        <div class="client-name">Marie N'Dong</div>
-                        <div class="client-role">Diplômée en Sciences de Gestion</div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Étudiant">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Le programme de Développement Web est très pratique. Les projets réels avec des entreprises nous préparent parfaitement au marché du travail."</p>
-                        <div class="client-name">Jean Okouma</div>
-                        <div class="client-role">Étudiant en Informatique</div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Étudiante">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Les enseignants de Droit des Affaires sont des professionnels en activité. Leurs conseils et leur réseau sont inestimables pour notre insertion professionnelle."</p>
-                        <div class="client-name">Sarah Boussamba</div>
-                        <div class="client-role">Étudiante en Droit</div>
                     </div>
                 </div>
             </div>
@@ -1489,15 +1378,15 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item" data-category="campus">
-                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Bibliothèque" class="gallery-img">
+                        <img src="IMG.jpg" alt="Campus IPEA" class="gallery-img">
                         <div class="gallery-overlay">
-                            <h3>Bibliothèque de l'IPEA</h3>
-                            <p>Espace de travail et de recherche</p>
+                            <h3>Campus IPEA</h3>
+                            <p>Vue du campus principal</p>
                         </div>
                         <div class="gallery-category">Campus</div>
                     </div>
                     <div class="gallery-item" data-category="cours">
-                        <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Cours en salle" class="gallery-img">
+                        <img src="IMG1.jpg" alt="Salle de cours" class="gallery-img">
                         <div class="gallery-overlay">
                             <h3>Salle de Cours</h3>
                             <p>Enseignement interactif et moderne</p>
@@ -1505,7 +1394,7 @@
                         <div class="gallery-category">Cours</div>
                     </div>
                     <div class="gallery-item" data-category="evenements">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Remise de diplômes" class="gallery-img">
+                        <img src="IMG2.jpg" alt="Remise de diplômes" class="gallery-img">
                         <div class="gallery-overlay">
                             <h3>Remise de Diplômes</h3>
                             <p>Cérémonie de graduation annuelle</p>
@@ -1513,7 +1402,7 @@
                         <div class="gallery-category">Événements</div>
                     </div>
                     <div class="gallery-item" data-category="cours">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Laboratoire informatique" class="gallery-img">
+                        <img src="IMG3.jpg" alt="Laboratoire informatique" class="gallery-img">
                         <div class="gallery-overlay">
                             <h3>Laboratoire Informatique</h3>
                             <p>Pratique sur équipements modernes</p>
@@ -1521,7 +1410,7 @@
                         <div class="gallery-category">Cours</div>
                     </div>
                     <div class="gallery-item" data-category="evenements">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Conférence" class="gallery-img">
+                        <img src="IMG4.jpg" alt="Conférence" class="gallery-img">
                         <div class="gallery-overlay">
                             <h3>Conférence Professionnelle</h3>
                             <p>Échanges avec des experts du secteur</p>
@@ -1529,7 +1418,7 @@
                         <div class="gallery-category">Événements</div>
                     </div>
                     <div class="gallery-item" data-category="campus">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Espace détente" class="gallery-img">
+                        <img src="IMG5.jpg" alt="Espace détente" class="gallery-img">
                         <div class="gallery-overlay">
                             <h3>Espace de Détente</h3>
                             <p>Zone de repos et d'échanges</p>
@@ -1553,7 +1442,8 @@
                             <div>
                                 <h3>Notre Adresse</h3>
                                 <p>Institut Panafricain des Études Appliquées<br>
-                                BP 1234, Libreville, Gabon</p>
+                                Charbonnages, ancien lycée Khadafi<br>
+                                Libreville, Gabon</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1562,8 +1452,8 @@
                             </div>
                             <div>
                                 <h3>Téléphone</h3>
-                                <p>+241 01 23 45 67 (Standard)<br>
-                                +241 01 23 45 68 (Admissions)</p>
+                                <p>+241 07 49 21 291<br>
+                                +241 06 21 54 147</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1656,7 +1546,6 @@
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#formations">Formations</a></li>
                         <li><a href="#recrutement">Recrutement Enseignants</a></li>
-                        <li><a href="#etudiants">Témoignages</a></li>
                         <li><a href="#gallery">Galerie</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -1671,14 +1560,12 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Newsletter IPEA</h3>
-                    <p>Abonnez-vous pour recevoir nos actualités académiques, événements et opportunités.</p>
-                    <form id="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        <button type="submit" class="btn" style="background: var(--accent); color: var(--primary); width: 100%;">S'abonner</button>
-                    </form>
+                    <h3>Contact</h3>
+                    <p>Charbonnages, ancien lycée Khadafi<br>
+                    Libreville, Gabon</p>
+                    <p>Tél: +241 07 49 21 291<br>
+                    Tél: +241 06 21 54 147</p>
+                    <p>Email: contact@ipea.education</p>
                 </div>
             </div>
             <div class="copyright">
@@ -1772,8 +1659,8 @@ ${message}
 - Copie de la carte nationale d'identité
                 `.trim();
                 
-                // Numéro WhatsApp (à remplacer par le vrai numéro)
-                const whatsappNumber = "24101234567";
+                // Numéro WhatsApp (premier numéro fourni)
+                const whatsappNumber = "241074921291";
                 
                 // Encoder le message pour l'URL
                 const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -1786,14 +1673,6 @@ ${message}
                 
                 // Message de confirmation
                 alert("Votre candidature a été préparée. Vous allez être redirigé vers WhatsApp pour l'envoyer.");
-            });
-
-            // Newsletter Form Submission
-            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                alert(`Merci! L'adresse ${email} a été ajoutée à notre liste de diffusion.`);
-                this.reset();
             });
 
             // Page Navigation System
@@ -1847,7 +1726,7 @@ ${message}
                     // Only handle same-page anchors (not page navigation)
                     if (href.startsWith('#') && href !== '#accueil' && 
                         href !== '#formations' && href !== '#recrutement' && 
-                        href !== '#etudiants' && href !== '#gallery' && href !== '#contact') {
+                        href !== '#gallery' && href !== '#contact') {
                         e.preventDefault();
                         
                         const targetId = href.substring(1);
@@ -1884,4 +1763,3 @@ ${message}
     </script>
 </body>
     </html>
-

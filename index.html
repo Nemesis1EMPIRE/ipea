@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,14 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Institut Panafricain d'Études Appliquées (IPEA) - La garantie d'une formation réussie au Gabon">
     <style>
-        /* Splash Screen Styles */
+        /* Splash Screen Styles avec image de fond */
         #splash-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0a2e5c 0%, #1a4a8f 100%);
+            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.95)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,6 +33,10 @@
         .splash-content {
             text-align: center;
             color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
         }
 
         .main-title {
@@ -48,6 +53,7 @@
             transform: translateY(-100vh);
             opacity: 0;
             animation: slideFromTop 1s ease forwards 0.5s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .panafricain {
@@ -57,6 +63,7 @@
             transform: translateY(100vh);
             opacity: 0;
             animation: slideFromBottom 1s ease forwards 0.5s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
@@ -66,6 +73,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards 2s;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .explosion-container {
@@ -83,6 +91,7 @@
             font-weight: 800;
             opacity: 0;
             color: #ff6b00;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .piece-1 { animation: piece1 1s ease forwards 3s; }
@@ -158,7 +167,7 @@
             100% { transform: translate(100px, 100px) rotate(360deg); opacity: 0; }
         }
 
-        /* Variables et styles de base - Noir et Blanc modifié pour IPEA */
+        /* Variables et styles de base */
         :root {
             --primary: #0a2e5c;
             --secondary: #ffffff;
@@ -186,7 +195,7 @@
             background-color: var(--secondary);
             opacity: 0;
             animation: bodyFadeIn 0.5s ease forwards 4s;
-            padding-bottom: 70px;
+            padding-bottom: 80px; /* Augmenté pour bottom bar plus grande */
         }
 
         @keyframes bodyFadeIn {
@@ -292,7 +301,7 @@
             color: var(--accent);
         }
         
-        /* Header et Navigation */
+        /* Header et Navigation - Rétractable */
         header {
             position: fixed;
             top: 0;
@@ -303,11 +312,18 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
             color: var(--secondary);
+            transform: translateY(0);
+            height: 80px; /* Hauteur initiale */
         }
         
         header.scrolled {
             background-color: var(--primary);
-            padding: 10px 0;
+            padding: 5px 0; /* Réduit le padding quand on scroll */
+            height: 60px; /* Hauteur réduite quand on scroll */
+        }
+        
+        header.hidden {
+            transform: translateY(-100%); /* Cache complètement l'appbar */
         }
         
         .navbar {
@@ -315,6 +331,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        header.scrolled .navbar {
+            padding: 10px 0; /* Réduit le padding du navbar quand on scroll */
         }
         
         .logo {
@@ -323,15 +345,31 @@
             color: var(--secondary);
             text-decoration: none;
             letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        header.scrolled .logo {
+            font-size: 1.6rem; /* Réduit la taille du logo quand on scroll */
         }
         
         .logo span {
             color: var(--accent);
         }
         
+        .logo i {
+            transition: var(--transition);
+        }
+        
+        header.scrolled .logo i {
+            font-size: 1.4rem; /* Réduit la taille de l'icône quand on scroll */
+        }
+        
         .nav-links {
             display: flex;
             list-style: none;
+            transition: var(--transition);
         }
         
         .nav-links li {
@@ -366,6 +404,7 @@
             align-items: center;
             text-align: center;
             color: var(--secondary);
+            margin-top: 80px; /* Compense la hauteur de l'appbar */
         }
         
         .hero-content {
@@ -395,6 +434,49 @@
             margin: 20px 0;
         }
         
+        /* Bottom Navigation Bar - Augmentée sur mobile */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.8rem;
+            transition: var(--transition);
+            flex: 1;
+            text-align: center;
+            padding: 8px 5px;
+        }
+        
+        .bottom-nav a i {
+            font-size: 1.4rem; /* Augmenté pour mobile */
+            margin-bottom: 6px; /* Augmenté pour mobile */
+        }
+        
+        .bottom-nav a.active {
+            color: var(--accent);
+            background: rgba(255, 107, 0, 0.1); /* Fond accentué pour l'élément actif */
+        }
+        
+        .bottom-nav a:hover {
+            color: var(--accent);
+        }
+        
+        /* Les autres styles restent les mêmes... */
         /* About Section dans Accueil */
         .about-content {
             display: grid;
@@ -906,223 +988,13 @@
             color: #bbb;
         }
         
-        /* Bottom Navigation Bar */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--primary);
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            z-index: 1000;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        /* Page Navigation */
+        .page {
             display: none;
         }
         
-        .bottom-nav a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--secondary);
-            font-size: 0.8rem;
-            transition: var(--transition);
-            flex: 1;
-            text-align: center;
-        }
-        
-        .bottom-nav a i {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .bottom-nav a.active {
-            color: var(--accent);
-        }
-        
-        .bottom-nav a:hover {
-            color: var(--accent);
-        }
-        
-        /* Inscription Section Styles */
-        .inscription-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .inscription-card {
-            background: var(--secondary);
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border: 1px solid var(--light-gray);
-        }
-        
-        .inscription-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pieces-list {
-            list-style: none;
-        }
-        
-        .pieces-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .pieces-list li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .statistiques {
-            background: var(--primary);
-            color: var(--secondary);
-            padding: 40px;
-            border-radius: 0;
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .stat-item {
-            padding: 20px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-        
-        .stat-label {
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        
-        /* Recrutement Section */
-        .recrutement-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .recrutement-intro {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        
-        .profils-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .profil-card {
-            background: var(--secondary);
-            padding: 30px;
-            border-radius: 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--light-gray);
-        }
-        
-        .procedure {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 0;
-            margin-top: 30px;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .procedure-list {
-            list-style: decimal;
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .procedure-list li {
-            margin-bottom: 10px;
-            padding-left: 10px;
-        }
-        
-        .diplomes-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .diplomes-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .diplomes-list li:before {
-            content: '🎓';
-            position: absolute;
-            left: 0;
-        }
-        
-        /* QR Code */
-        .qr-code {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: white;
-            border-radius: 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 300px;
-            margin: 30px auto;
-        }
-        
-        .qr-code img {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        
-        /* Partners Section */
-        .partners {
-            background: var(--light);
-            padding: 60px 0;
-        }
-        
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            align-items: center;
-            margin-top: 40px;
-        }
-        
-        .partner-logo {
-            background: white;
-            padding: 20px;
-            border-radius: 0;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .page.active {
+            display: block;
         }
         
         /* Counter Section */
@@ -1154,15 +1026,6 @@
         .counter-label {
             font-size: 1.1rem;
             font-weight: 500;
-        }
-        
-        /* Page Navigation */
-        .page {
-            display: none;
-        }
-        
-        .page.active {
-            display: block;
         }
         
         /* Responsive Design */
@@ -1206,15 +1069,66 @@
             .bottom-nav {
                 display: flex;
             }
+            
+            /* Réduire l'appbar sur mobile */
+            header {
+                height: 70px; /* Réduit sur mobile */
+            }
+            
+            header.scrolled {
+                height: 50px; /* Encore plus réduit quand on scroll */
+            }
+            
+            .navbar {
+                padding: 15px 0; /* Réduit sur mobile */
+            }
+            
+            header.scrolled .navbar {
+                padding: 8px 0; /* Réduit encore plus quand on scroll */
+            }
+            
+            .logo {
+                font-size: 1.6rem; /* Réduit sur mobile */
+            }
+            
+            header.scrolled .logo {
+                font-size: 1.4rem; /* Encore plus réduit quand on scroll */
+            }
+            
+            .hero {
+                margin-top: 70px; /* Ajusté pour la nouvelle hauteur */
+            }
+            
+            /* Augmenter la bottom bar sur mobile */
+            .bottom-nav {
+                padding: 18px 0; /* Augmenté sur mobile */
+            }
+            
+            .bottom-nav a {
+                padding: 10px 5px; /* Augmenté sur mobile */
+            }
+            
+            .bottom-nav a i {
+                font-size: 1.6rem; /* Augmenté sur mobile */
+                margin-bottom: 8px; /* Augmenté sur mobile */
+            }
+            
+            .bottom-nav a span {
+                font-size: 0.9rem; /* Augmenté sur mobile */
+            }
         }
         
         @media (max-width: 768px) {
             .navbar {
-                padding: 15px 0;
+                padding: 12px 0; /* Réduit encore plus */
+            }
+            
+            header.scrolled .navbar {
+                padding: 6px 0; /* Réduit encore plus quand on scroll */
             }
             
             .nav-links {
-                display: none;
+                display: none; /* Cache la navigation desktop sur mobile */
             }
             
             .hero h1 {
@@ -1246,16 +1160,22 @@
                 font-size: 0.8rem;
             }
             
+            /* Augmenter encore la bottom bar sur petits mobiles */
             .bottom-nav {
-                padding: 12px 0;
+                padding: 20px 0; /* Encore plus grand */
             }
             
             .bottom-nav a {
-                font-size: 0.7rem;
+                padding: 12px 5px; /* Encore plus grand */
             }
             
             .bottom-nav a i {
-                font-size: 1rem;
+                font-size: 1.8rem; /* Encore plus grand */
+                margin-bottom: 10px; /* Encore plus grand */
+            }
+            
+            body {
+                padding-bottom: 90px; /* Ajusté pour bottom bar plus grande */
             }
         }
         
@@ -1292,19 +1212,48 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Ajustements pour très petits écrans */
             .bottom-nav a span {
-                display: none;
+                display: block; /* Toujours afficher le texte */
+                font-size: 0.8rem;
             }
             
             .bottom-nav a i {
-                font-size: 1.3rem;
-                margin-bottom: 0;
+                font-size: 1.5rem;
+                margin-bottom: 8px;
             }
+            
+            /* Réduire encore l'appbar sur très petits écrans */
+            header {
+                height: 65px;
+            }
+            
+            header.scrolled {
+                height: 45px;
+            }
+            
+            .hero {
+                margin-top: 65px;
+            }
+        }
+        
+        /* Styles pour le scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: 1001;
         }
     </style>
 </head>
 <body>
-    <!-- Splash Screen -->
+    <!-- Splash Screen avec image de fond -->
     <div id="splash-screen">
         <div class="splash-content">
             <div class="main-title">
@@ -1322,6 +1271,9 @@
             <div class="explosion-piece piece-6">★</div>
         </div>
     </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
 
     <!-- Header -->
     <header id="header">
@@ -1864,25 +1816,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Partners Section -->
-            <div class="partners">
-                <h3 style="text-align: center; color: var(--primary);">Elles nous font confiance</h3>
-                <div class="partners-grid">
-                    <div class="partner-logo">
-                        <div style="font-weight: bold; color: var(--primary);">ENTREPRISES GABONAISES</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div style="font-weight: bold; color: var(--primary);">INSTITUTIONS PUBLIQUES</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div style="font-weight: bold; color: var(--primary);">ORGANISATIONS INTERNATIONALES</div>
-                    </div>
-                    <div class="partner-logo">
-                        <div style="font-weight: bold; color: var(--primary);">STARTUPS INNOVANTES</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1942,7 +1875,7 @@
             // Hide splash screen after animations complete
             setTimeout(() => {
                 splashScreen.classList.add('fade-out');
-            }, 4000); // Total animation duration
+            }, 4000);
 
             // Counter Animation
             const counters = document.querySelectorAll('.counter-number');
@@ -1970,6 +1903,10 @@
             const navLinks = document.querySelectorAll('.nav-links a, .bottom-nav a, .logo[data-page]');
             const pages = document.querySelectorAll('.page');
             const header = document.getElementById('header');
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            
+            let lastScrollTop = 0;
+            let scrollTimeout;
             
             // Navigation entre pages
             navLinks.forEach(link => {
@@ -2005,24 +1942,55 @@
                         
                         // Scroll vers le haut de la page
                         window.scrollTo(0, 0);
+                        
+                        // Montrer l'appbar quand on change de page
+                        header.classList.remove('hidden');
                     }
                 });
             });
             
-            // Header scroll effect
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
+            // Header scroll effect - Rétractable
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrolledClass = 'scrolled';
+                const hiddenClass = 'hidden';
+                
+                // Scroll indicator
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                scrollIndicator.style.transform = `scaleX(${scrolled / 100})`;
+                
+                // Montrer/réduire l'appbar quand on scroll
+                if (scrollTop > 100) {
+                    header.classList.add(scrolledClass);
                 } else {
-                    header.classList.remove('scrolled');
+                    header.classList.remove(scrolledClass);
                 }
+                
+                // Cacher l'appbar quand on scroll vers le bas
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scroll vers le bas - cacher l'appbar
+                    header.classList.add(hiddenClass);
+                } else {
+                    // Scroll vers le haut - montrer l'appbar
+                    header.classList.remove(hiddenClass);
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                
+                // Réinitialiser le timeout pour cacher l'appbar
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    // Après 2 secondes sans scroll, montrer l'appbar
+                    header.classList.remove(hiddenClass);
+                }, 2000);
             });
             
             // Form de recrutement
             document.getElementById('recruitment-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Récupération des données du formulaire
                 const name = document.getElementById('recruit-name').value;
                 const phone = document.getElementById('recruit-phone').value;
                 const email = document.getElementById('recruit-email').value;
@@ -2030,7 +1998,6 @@
                 const niveau = document.getElementById('recruit-niveau').value;
                 const message = document.getElementById('recruit-message').value;
                 
-                // Construction du message WhatsApp
                 const whatsappMessage = `
 *CANDIDATURE ENSEIGNANT - IPEA*
 
@@ -2049,22 +2016,12 @@ ${message}
 *Merci de joindre votre CV, lettre de motivation, photo et diplômes.*
                 `.trim();
                 
-                // Encodage du message pour URL
                 const encodedMessage = encodeURIComponent(whatsappMessage);
-                
-                // Numéro WhatsApp IPEA
                 const phoneNumber = "241074921291";
-                
-                // Création du lien WhatsApp
                 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
                 
-                // Ouverture dans une nouvelle fenêtre
                 window.open(whatsappURL, '_blank');
-                
-                // Message de confirmation
                 alert('✅ Candidature envoyée! Redirection vers WhatsApp pour joindre les documents...');
-                
-                // Réinitialisation du formulaire
                 this.reset();
             });
             
@@ -2076,7 +2033,6 @@ ${message}
                 pages.forEach(page => page.classList.remove('active'));
                 currentPage.classList.add('active');
                 
-                // Mettre à jour les liens actifs
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     const linkPage = link.getAttribute('data-page') || link.getAttribute('href').substring(1);
@@ -2085,7 +2041,6 @@ ${message}
                     }
                 });
                 
-                // Mettre à jour la bottom nav
                 document.querySelectorAll('.bottom-nav a').forEach(bottomLink => {
                     bottomLink.classList.remove('active');
                     if (bottomLink.getAttribute('data-page') === currentHash) {
@@ -2094,30 +2049,12 @@ ${message}
                 });
             }
             
-            // Gallery Filtering (si utilisé)
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            if (filterBtns.length > 0) {
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        // Remove active class from all buttons
-                        filterBtns.forEach(b => b.classList.remove('active'));
-                        // Add active class to clicked button
-                        btn.classList.add('active');
-                        
-                        const filter = btn.getAttribute('data-filter');
-                        
-                        galleryItems.forEach(item => {
-                            if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        });
-                    });
-                });
-            }
+            // Montrer l'appbar quand on touche en haut de l'écran (mobile)
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches[0].clientY < 100) {
+                    header.classList.remove('hidden');
+                }
+            });
         });
     </script>
 </body>

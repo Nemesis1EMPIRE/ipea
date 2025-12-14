@@ -7,157 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Institut Panafricain des Études Appliquées - Formation d'excellence en Sciences de Gestion, Informatique et Sciences Juridiques">
     <style>
-        /* Splash Screen Styles */
-        #splash-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0a2e5c 0%, #1a4a8f 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-
-        #splash-screen.fade-out {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .splash-content {
-            text-align: center;
-            color: white;
-        }
-
-        .main-title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .institut {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            transform: translateY(-100vh);
-            opacity: 0;
-            animation: slideFromTop 1s ease forwards 0.5s;
-        }
-
-        .ipea {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #ffd700;
-            margin-bottom: 10px;
-            transform: scale(0);
-            opacity: 0;
-            animation: scaleIn 1s ease forwards 1s;
-        }
-
-        .subtitle {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards 2s;
-        }
-
-        .explosion-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            animation: explode 1s ease forwards 3s;
-        }
-
-        .explosion-piece {
-            position: absolute;
-            font-size: 2rem;
-            font-weight: 800;
-            opacity: 0;
-            color: #ffd700;
-        }
-
-        .piece-1 { animation: piece1 1s ease forwards 3s; }
-        .piece-2 { animation: piece2 1s ease forwards 3s; }
-        .piece-3 { animation: piece3 1s ease forwards 3s; }
-        .piece-4 { animation: piece4 1s ease forwards 3s; }
-        .piece-5 { animation: piece5 1s ease forwards 3s; }
-        .piece-6 { animation: piece6 1s ease forwards 3s; }
-
-        @keyframes slideFromTop {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes scaleIn {
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes explode {
-            0% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
-            }
-        }
-
-        @keyframes piece1 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-100px, -100px) rotate(-180deg); opacity: 0; }
-        }
-
-        @keyframes piece2 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(100px, -100px) rotate(180deg); opacity: 0; }
-        }
-
-        @keyframes piece3 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-150px, 0) rotate(-270deg); opacity: 0; }
-        }
-
-        @keyframes piece4 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(150px, 0) rotate(270deg); opacity: 0; }
-        }
-
-        @keyframes piece5 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(-100px, 100px) rotate(-360deg); opacity: 0; }
-        }
-
-        @keyframes piece6 {
-            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-            100% { transform: translate(100px, 100px) rotate(360deg); opacity: 0; }
-        }
-
         /* Variables et styles de base */
         :root {
             --primary: #0a2e5c;
@@ -184,14 +33,6 @@
             line-height: 1.6;
             color: var(--primary);
             background-color: var(--secondary);
-            opacity: 0;
-            animation: bodyFadeIn 0.5s ease forwards 4s;
-        }
-
-        @keyframes bodyFadeIn {
-            to {
-                opacity: 1;
-            }
         }
         
         .container {
@@ -201,14 +42,8 @@
             padding: 0 15px;
         }
         
-        .page-section {
-            padding: 100px 0;
-            min-height: 80vh;
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
+        section {
+            padding: 80px 0;
         }
         
         h1, h2, h3, h4 {
@@ -286,21 +121,25 @@
             color: var(--accent);
         }
         
-        /* Header et Navigation */
+        /* Header avec background image */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: var(--primary);
+            background: linear-gradient(rgba(10, 46, 92, 0.9), rgba(10, 46, 92, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
             color: var(--secondary);
         }
         
         header.scrolled {
-            background-color: var(--primary);
+            background: linear-gradient(rgba(10, 46, 92, 0.95), rgba(10, 46, 92, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
             padding: 10px 0;
         }
         
@@ -317,10 +156,26 @@
             color: var(--secondary);
             text-decoration: none;
             letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .logo span {
             color: var(--accent);
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            border-radius: 4px;
         }
         
         .nav-links {
@@ -346,11 +201,6 @@
             color: var(--accent);
         }
         
-        .nav-links a.active {
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
-        }
-        
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -358,16 +208,17 @@
             color: var(--secondary);
         }
         
-        /* Hero Section */
+        /* Hero Section avec background image */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 46, 92, 0.8), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(10, 46, 92, 0.8), rgba(10, 46, 92, 0.9)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--secondary);
+            margin-top: 80px;
         }
         
         .hero-content {
@@ -529,7 +380,7 @@
             transform: scale(1.1);
         }
         
-        /* About Section */
+        /* About Section dans Accueil */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -697,6 +548,8 @@
             font-weight: 600;
             transition: var(--transition);
             margin-top: 20px;
+            border: none;
+            cursor: pointer;
         }
 
         .contact-whatsapp:hover {
@@ -1091,45 +944,6 @@
             border: 1px solid var(--accent);
         }
 
-        /* Bottom Navigation */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--primary);
-            z-index: 1000;
-            display: none;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .bottom-nav-items {
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-        }
-
-        .bottom-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 0.8rem;
-            transition: var(--transition);
-            padding: 5px 10px;
-        }
-
-        .bottom-nav-item i {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .bottom-nav-item:hover,
-        .bottom-nav-item.active {
-            color: var(--accent);
-        }
-        
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
@@ -1153,28 +967,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .institut {
-                font-size: 2.5rem;
-            }
-
-            .ipea {
-                font-size: 3rem;
-            }
-
-            .subtitle {
-                font-size: 1.5rem;
-            }
-
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .bottom-nav {
-                display: block;
-            }
-
-            .page-section {
-                padding-bottom: 120px;
             }
         }
         
@@ -1189,7 +983,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: var(--primary);
+                background: rgba(10, 46, 92, 0.95);
                 flex-direction: column;
                 align-items: center;
                 padding-top: 50px;
@@ -1217,18 +1011,6 @@
                 font-size: 1rem;
             }
 
-            .institut {
-                font-size: 2rem;
-            }
-
-            .ipea {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.2rem;
-            }
-
             .gallery-filters {
                 gap: 10px;
             }
@@ -1244,8 +1026,8 @@
         }
         
         @media (max-width: 576px) {
-            .page-section {
-                padding: 60px 0 100px;
+            section {
+                padding: 60px 0;
             }
             
             h1 {
@@ -1260,18 +1042,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .institut {
-                font-size: 1.8rem;
-            }
-
-            .ipea {
-                font-size: 2.2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
@@ -1283,47 +1053,26 @@
             .filieres-container {
                 grid-template-columns: 1fr;
             }
-
-            .bottom-nav-item span {
-                font-size: 0.7rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-        <div class="splash-content">
-            <div class="main-title">
-                <div class="institut">Institut Panafricain</div>
-                <div class="ipea">IPEA</div>
-                <div class="institut">des Études Appliquées</div>
-            </div>
-            <div class="subtitle">Excellence • Professionnalisme • Innovation</div>
-        </div>
-        <div class="explosion-container">
-            <div class="explosion-piece piece-1">I</div>
-            <div class="explosion-piece piece-2">P</div>
-            <div class="explosion-piece piece-3">E</div>
-            <div class="explosion-piece piece-4">A</div>
-            <div class="explosion-piece piece-5">✧</div>
-            <div class="explosion-piece piece-6">★</div>
-        </div>
-    </div>
-
-    <!-- Header -->
+    <!-- Header avec background image -->
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#accueil" class="logo">IP<span>EA</span></a>
+                <a href="#accueil" class="logo">
+                    <div class="logo-img">IP</div>
+                    <div>Institut Panafricain<br>des Études Appliquées</div>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                    <li><a href="#formations" class="nav-link">Formations</a></li>
-                    <li><a href="#recrutement" class="nav-link">Recrutement</a></li>
-                    <li><a href="#about" class="nav-link">À propos</a></li>
-                    <li><a href="#etudiants" class="nav-link">Étudiants</a></li>
-                    <li><a href="#gallery" class="nav-link">Galerie</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#formations">Formations</a></li>
+                    <li><a href="#recrutement">Recrutement</a></li>
+                    <li><a href="#campus">Campus</a></li>
+                    <li><a href="#etudiants">Étudiants</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -1333,7 +1082,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="accueil-section">
+    <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
                 <h1>Institut Panafricain des Études Appliquées</h1>
@@ -1343,333 +1092,392 @@
         </div>
     </section>
 
-    <!-- Page Sections -->
-    <main id="page-content">
-        <!-- Accueil Section -->
-        <section class="page-section active" id="accueil">
-            <div class="container">
-                <!-- Counter Section -->
-                <div class="counter-section">
-                    <h2>IPEA en Chiffres</h2>
-                    <div class="counter-grid">
-                        <div class="counter-item">
-                            <div class="counter-number" data-target="3000">0</div>
-                            <div class="counter-label">Étudiants</div>
-                        </div>
-                        <div class="counter-item">
-                            <div class="counter-number" data-target="150">0</div>
-                            <div class="counter-label">Enseignants</div>
-                        </div>
-                        <div class="counter-item">
-                            <div class="counter-number" data-target="20">0</div>
-                            <div class="counter-label">Filières de formation</div>
-                        </div>
-                        <div class="counter-item">
-                            <div class="counter-number" data-target="85">0</div>
-                            <div class="counter-label">Taux d'insertion professionnelle</div>
-                        </div>
-                    </div>
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <h2>IPEA en Chiffres</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" data-target="3000">0</div>
+                    <div class="counter-label">Étudiants</div>
                 </div>
-
-                <!-- Nos Filières -->
-                <div class="container" style="padding-top: 80px;">
-                    <h2>Nos Domaines de Formation</h2>
-                    <div class="filieres-container">
-                        <div class="filiere-category">
-                            <h3>SCIENCES DE GESTION</h3>
-                            <ul class="filiere-list">
-                                <li>Comptabilité-Contrôle de gestion & Audit</li>
-                                <li>Transport & Logistique</li>
-                                <li>Banque-Assurance</li>
-                                <li>Marketing & communication</li>
-                                <li>Qualité Hygiène Sécurité Environnement (QHSE)</li>
-                                <li>Économie verte</li>
-                                <li>Entreprenariat & innovation</li>
-                            </ul>
-                        </div>
-
-                        <div class="filiere-category">
-                            <h3>SCIENCES INFORMATIQUES</h3>
-                            <ul class="filiere-list">
-                                <li>Réseau informatique</li>
-                                <li>Développement web</li>
-                                <li>Administration systèmes</li>
-                                <li>Base de données</li>
-                                <li>Sécurité informatique</li>
-                                <li>Développement d'applications</li>
-                            </ul>
-                        </div>
-
-                        <div class="filiere-category">
-                            <h3>SCIENCES JURIDIQUES</h3>
-                            <ul class="filiere-list">
-                                <li>Droit Public</li>
-                                <li>Droit des Affaires</li>
-                                <li>Droit International</li>
-                                <li>Droit des Sociétés</li>
-                                <li>Droit Fiscal</li>
-                                <li>Procédure Judiciaire</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 40px;">
-                        <h3>NIVEAUX DE FORMATION DISPONIBLES</h3>
-                        <div class="niveaux-list" style="justify-content: center;">
-                            <span class="niveau-tag">Licence 1 & 2</span>
-                            <span class="niveau-tag">Licence 3</span>
-                            <span class="niveau-tag">Master 1</span>
-                            <span class="niveau-tag">Master 2</span>
-                            <span class="niveau-tag">Programme Exécutif</span>
-                        </div>
-                    </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="150">0</div>
+                    <div class="counter-label">Enseignants</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="20">0</div>
+                    <div class="counter-label">Filières de formation</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" data-target="85">0</div>
+                    <div class="counter-label">Taux d'insertion professionnelle</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Formations Section -->
-        <section class="page-section" id="formations">
-            <div class="container">
-                <h2>Nos Formations Détaillées</h2>
-                <div class="formations-grid">
-                    <!-- Sciences de Gestion -->
-                    <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                        <div class="formation-content">
-                            <h3>Sciences de Gestion</h3>
-                            <p>Formation complète en gestion d'entreprise, finance, marketing et management.</p>
-                            <div class="formation-tags">
-                                <span class="formation-tag">Licence</span>
-                                <span class="formation-tag">Master</span>
-                                <span class="formation-tag">Professionnel</span>
-                            </div>
-                            <ul class="formation-features">
-                                <li>Comptabilité & Audit</li>
-                                <li>Marketing Digital</li>
-                                <li>Logistique & Transport</li>
-                                <li>Banque & Assurance</li>
-                                <li>Économie Verte</li>
-                            </ul>
-                            <div class="formation-cta">
-                                <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sciences Informatiques -->
-                    <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                        <div class="formation-content">
-                            <h3>Sciences Informatiques</h3>
-                            <p>Formations techniques en développement, réseaux et sécurité informatique.</p>
-                            <div class="formation-tags">
-                                <span class="formation-tag">Bac+3</span>
-                                <span class="formation-tag">Bac+5</span>
-                                <span class="formation-tag">Certification</span>
-                            </div>
-                            <ul class="formation-features">
-                                <li>Développement Web & Mobile</li>
-                                <li>Réseaux Informatiques</li>
-                                <li>Cybersécurité</li>
-                                <li>Base de Données</li>
-                                <li>Administration Systèmes</li>
-                            </ul>
-                            <div class="formation-cta">
-                                <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sciences Juridiques -->
-                    <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                        <div class="formation-content">
-                            <h3>Sciences Juridiques</h3>
-                            <p>Programmes d'excellence en droit gabonais, international et des affaires.</p>
-                            <div class="formation-tags">
-                                <span class="formation-tag">Droit</span>
-                                <span class="formation-tag">Juridique</span>
-                                <span class="formation-tag">Master</span>
-                            </div>
-                            <ul class="formation-features">
-                                <li>Droit des Affaires</li>
-                                <li>Droit Public</li>
-                                <li>Droit International</li>
-                                <li>Droit Fiscal</li>
-                                <li>Procédure Judiciaire</li>
-                            </ul>
-                            <div class="formation-cta">
-                                <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Programme Exécutif -->
-                    <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                        <div class="formation-content">
-                            <h3>Programme Exécutif</h3>
-                            <p>Formations continues pour professionnels et cadres en activité.</p>
-                            <div class="formation-tags">
-                                <span class="formation-tag">Continue</span>
-                                <span class="formation-tag">Professionnelle</span>
-                                <span class="formation-tag">Executive</span>
-                            </div>
-                            <ul class="formation-features">
-                                <li>Pour professionnels expérimentés</li>
-                                <li>Formation en weekend</li>
-                                <li>Certifications reconnues</li>
-                                <li>Réseautage professionnel</li>
-                                <li>Adapté aux emplois du temps chargés</li>
-                            </ul>
-                            <div class="formation-cta">
-                                <a href="#contact" class="btn btn-outline">S'inscrire</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- About Section dans Accueil -->
+    <section id="about">
+        <div class="container">
+            <h2>À Propos de l'IPEA</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre Mission: Excellence Académique et Professionnelle</h3>
+                    <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
+                    <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
+                    <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
+                    <h4>Nos Valeurs :</h4>
+                    <ul class="formation-features">
+                        <li>Excellence académique</li>
+                        <li>Innovation pédagogique</li>
+                        <li>Professionnalisme</li>
+                        <li>Éthique et intégrité</li>
+                        <li>Ouverture internationale</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Nous Contacter</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus de l'IPEA">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Recrutement Enseignants Section -->
-        <section class="page-section recrutement-section" id="recrutement">
-            <div class="container">
-                <h2>Recrutement Enseignants</h2>
-                
-                <div class="recrutement-intro">
-                    <p>L'Institut Panafricain des Études Appliquées (IPEA) recherche activement des enseignants qualifiés et passionnés pour renforcer son corps professoral. Rejoignez notre institution d'excellence et contribuez à former les leaders de demain.</p>
+    <!-- Nos Filières dans Accueil -->
+    <section style="background-color: var(--light);">
+        <div class="container">
+            <h2>Nos Domaines de Formation</h2>
+            <div class="filieres-container">
+                <div class="filiere-category">
+                    <h3>SCIENCES DE GESTION</h3>
+                    <ul class="filiere-list">
+                        <li>Comptabilité-Contrôle de gestion & Audit</li>
+                        <li>Transport & Logistique</li>
+                        <li>Banque-Assurance</li>
+                        <li>Marketing & communication</li>
+                        <li>Qualité Hygiène Sécurité Environnement (QHSE)</li>
+                        <li>Économie verte</li>
+                        <li>Entreprenariat & innovation</li>
+                    </ul>
                 </div>
 
-                <h3 style="text-align: center; margin-bottom: 30px;">Profils Recherchés</h3>
-                <div class="profiles-grid">
-                    <!-- Sciences de Gestion -->
-                    <div class="profile-card">
-                        <div class="profile-header">
-                            <div class="profile-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div>
-                                <h4>Sciences de Gestion</h4>
-                                <p>Enseignants pour les filières suivantes :</p>
-                            </div>
+                <div class="filiere-category">
+                    <h3>SCIENCES INFORMATIQUES</h3>
+                    <ul class="filiere-list">
+                        <li>Réseau informatique</li>
+                        <li>Développement web</li>
+                        <li>Administration systèmes</li>
+                        <li>Base de données</li>
+                        <li>Sécurité informatique</li>
+                        <li>Développement d'applications</li>
+                    </ul>
+                </div>
+
+                <div class="filiere-category">
+                    <h3>SCIENCES JURIDIQUES</h3>
+                    <ul class="filiere-list">
+                        <li>Droit Public</li>
+                        <li>Droit des Affaires</li>
+                        <li>Droit International</li>
+                        <li>Droit des Sociétés</li>
+                        <li>Droit Fiscal</li>
+                        <li>Procédure Judiciaire</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>NIVEAUX DE FORMATION DISPONIBLES</h3>
+                <div class="niveaux-list" style="justify-content: center;">
+                    <span class="niveau-tag">Licence 1 & 2</span>
+                    <span class="niveau-tag">Licence 3</span>
+                    <span class="niveau-tag">Master 1</span>
+                    <span class="niveau-tag">Master 2</span>
+                    <span class="niveau-tag">Programme Exécutif</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations">
+        <div class="container">
+            <h2>Nos Formations Détaillées</h2>
+            <div class="formations-grid">
+                <!-- Sciences de Gestion -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Sciences de Gestion</h3>
+                        <p>Formation complète en gestion d'entreprise, finance, marketing et management.</p>
+                        <div class="formation-tags">
+                            <span class="formation-tag">Licence</span>
+                            <span class="formation-tag">Master</span>
+                            <span class="formation-tag">Professionnel</span>
                         </div>
-                        <ul class="profile-list">
-                            <li>Comptabilité & Audit (Licence 3)</li>
-                            <li>Marketing Digital (Master 1)</li>
-                            <li>Logistique & Transport (Licence 2)</li>
-                            <li>Banque & Assurance (Master 2)</li>
-                            <li>Qualité Hygiène Sécurité Environnement</li>
-                            <li>Économie verte & Entreprenariat</li>
+                        <ul class="formation-features">
+                            <li>Comptabilité & Audit</li>
+                            <li>Marketing Digital</li>
+                            <li>Logistique & Transport</li>
+                            <li>Banque & Assurance</li>
+                            <li>Économie Verte</li>
                         </ul>
-                    </div>
-
-                    <!-- Sciences Informatiques -->
-                    <div class="profile-card">
-                        <div class="profile-header">
-                            <div class="profile-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <div>
-                                <h4>Sciences Informatiques</h4>
-                                <p>Enseignants pour les filières suivantes :</p>
-                            </div>
+                        <div class="formation-cta">
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
-                        <ul class="profile-list">
-                            <li>Développement Web (Licence 2)</li>
-                            <li>Réseaux Informatiques (Licence 3)</li>
-                            <li>Sécurité Informatique (Master 1)</li>
-                            <li>Base de Données (Master 2)</li>
+                    </div>
+                </div>
+
+                <!-- Sciences Informatiques -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Sciences Informatiques</h3>
+                        <p>Formations techniques en développement, réseaux et sécurité informatique.</p>
+                        <div class="formation-tags">
+                            <span class="formation-tag">Bac+3</span>
+                            <span class="formation-tag">Bac+5</span>
+                            <span class="formation-tag">Certification</span>
+                        </div>
+                        <ul class="formation-features">
+                            <li>Développement Web & Mobile</li>
+                            <li>Réseaux Informatiques</li>
+                            <li>Cybersécurité</li>
+                            <li>Base de Données</li>
                             <li>Administration Systèmes</li>
-                            <li>Développement d'Applications</li>
                         </ul>
-                    </div>
-
-                    <!-- Sciences Juridiques -->
-                    <div class="profile-card">
-                        <div class="profile-header">
-                            <div class="profile-icon">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div>
-                                <h4>Sciences Juridiques</h4>
-                                <p>Enseignants pour les filières suivantes :</p>
-                            </div>
+                        <div class="formation-cta">
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
                         </div>
-                        <ul class="profile-list">
-                            <li>Droit des Affaires (Licence 3)</li>
-                            <li>Droit Public (Master 1)</li>
-                            <li>Droit International (Master 2)</li>
-                            <li>Droit Fiscal (Licence 2)</li>
-                            <li>Droit des Sociétés</li>
+                    </div>
+                </div>
+
+                <!-- Sciences Juridiques -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1589391886085-8b6b0ac72a1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Sciences Juridiques</h3>
+                        <p>Programmes d'excellence en droit gabonais, international et des affaires.</p>
+                        <div class="formation-tags">
+                            <span class="formation-tag">Droit</span>
+                            <span class="formation-tag">Juridique</span>
+                            <span class="formation-tag">Master</span>
+                        </div>
+                        <ul class="formation-features">
+                            <li>Droit des Affaires</li>
+                            <li>Droit Public</li>
+                            <li>Droit International</li>
+                            <li>Droit Fiscal</li>
                             <li>Procédure Judiciaire</li>
                         </ul>
+                        <div class="formation-cta">
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
+                        </div>
                     </div>
                 </div>
 
-                <h3 style="text-align: center; margin: 50px 0 30px;">Diplômes Nécessaires</h3>
+                <!-- Programme Exécutif -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Programme Exécutif</h3>
+                        <p>Formations continues pour professionnels et cadres en activité.</p>
+                        <div class="formation-tags">
+                            <span class="formation-tag">Continue</span>
+                            <span class="formation-tag">Professionnelle</span>
+                            <span class="formation-tag">Executive</span>
+                        </div>
+                        <ul class="formation-features">
+                            <li>Pour professionnels expérimentés</li>
+                            <li>Formation en weekend</li>
+                            <li>Certifications reconnues</li>
+                            <li>Réseautage professionnel</li>
+                            <li>Adapté aux emplois du temps chargés</li>
+                        </ul>
+                        <div class="formation-cta">
+                            <a href="#contact" class="btn btn-outline">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recrutement Enseignants Section -->
+    <section class="recrutement-section" id="recrutement">
+        <div class="container">
+            <h2>Recrutement Enseignants</h2>
+            
+            <div class="recrutement-intro">
+                <p>L'Institut Panafricain des Études Appliquées (IPEA) recherche activement des enseignants qualifiés et passionnés pour renforcer son corps professoral. Rejoignez notre institution d'excellence et contribuez à former les leaders de demain.</p>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 30px;">Profils Recherchés</h3>
+            <div class="profiles-grid">
+                <!-- Sciences de Gestion -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4>Sciences de Gestion</h4>
+                            <p>Enseignants pour les filières suivantes :</p>
+                        </div>
+                    </div>
+                    <ul class="profile-list">
+                        <li>Comptabilité & Audit (Licence 3)</li>
+                        <li>Marketing Digital (Master 1)</li>
+                        <li>Logistique & Transport (Licence 2)</li>
+                        <li>Banque & Assurance (Master 2)</li>
+                        <li>Qualité Hygiène Sécurité Environnement</li>
+                        <li>Économie verte & Entreprenariat</li>
+                    </ul>
+                </div>
+
+                <!-- Sciences Informatiques -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h4>Sciences Informatiques</h4>
+                            <p>Enseignants pour les filières suivantes :</p>
+                        </div>
+                    </div>
+                    <ul class="profile-list">
+                        <li>Développement Web (Licence 2)</li>
+                        <li>Réseaux Informatiques (Licence 3)</li>
+                        <li>Sécurité Informatique (Master 1)</li>
+                        <li>Base de Données (Master 2)</li>
+                        <li>Administration Systèmes</li>
+                        <li>Développement d'Applications</li>
+                    </ul>
+                </div>
+
+                <!-- Sciences Juridiques -->
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <h4>Sciences Juridiques</h4>
+                            <p>Enseignants pour les filières suivantes :</p>
+                        </div>
+                    </div>
+                    <ul class="profile-list">
+                        <li>Droit des Affaires (Licence 3)</li>
+                        <li>Droit Public (Master 1)</li>
+                        <li>Droit International (Master 2)</li>
+                        <li>Droit Fiscal (Licence 2)</li>
+                        <li>Droit des Sociétés</li>
+                        <li>Procédure Judiciaire</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 50px 0 30px;">Diplômes Nécessaires</h3>
+            <div class="procedure-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>BAC + 3 Minimum</h4>
+                    <p>Licence professionnelle ou académique dans le domaine concerné</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Master Requis</h4>
+                    <p>Master 2 ou diplôme équivalent pour les enseignements en Master</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Expérience Professionnelle</h4>
+                    <p>Minimum 3 ans d'expérience dans le domaine d'enseignement</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Compétences Pédagogiques</h4>
+                    <p>Expérience en enseignement ou formation est un atout</p>
+                </div>
+            </div>
+
+            <div class="formula-section">
+                <h3>Procédure pour Postuler</h3>
+                <p style="text-align: center; margin-bottom: 30px;">Pour postuler, suivez les étapes suivantes :</p>
+                
                 <div class="procedure-steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <h4>BAC + 3 Minimum</h4>
-                        <p>Licence professionnelle ou académique dans le domaine concerné</p>
+                        <h4>Contacter le Service</h4>
+                        <p>Envoyez un message au numéro WhatsApp dédié au recrutement</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h4>Master Requis</h4>
-                        <p>Master 2 ou diplôme équivalent pour les enseignements en Master</p>
+                        <h4>Préparer les Documents</h4>
+                        <p>Rassemblez tous les documents nécessaires</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h4>Expérience Professionnelle</h4>
-                        <p>Minimum 3 ans d'expérience dans le domaine d'enseignement</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h4>Compétences Pédagogiques</h4>
-                        <p>Expérience en enseignement ou formation est un atout</p>
+                        <h4>Envoyer le Dossier</h4>
+                        <p>Transmettez l'ensemble du dossier complet</p>
                     </div>
                 </div>
 
-                <div class="formula-section">
-                    <h3>Procédure pour Postuler</h3>
-                    <p style="text-align: center; margin-bottom: 30px;">Pour postuler, suivez les étapes suivantes :</p>
+                <h4 style="margin-top: 40px; color: var(--primary);">Documents à Fournir :</h4>
+                <ul class="documents-list">
+                    <li>Curriculum Vitae détaillé (CV)</li>
+                    <li>Lettre de motivation manuscrite</li>
+                    <li>Photo d'identité récente</li>
+                    <li>Acte de naissance</li>
+                    <li>Copie certifiée des diplômes</li>
+                    <li>Attestations d'expérience professionnelle</li>
+                    <li>Copie de la carte nationale d'identité</li>
+                </ul>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <h4>Formulaire de Candidature : CV + Message</h4>
+                    <p>Votre candidature doit comprendre un CV complet accompagné d'un message présentant votre motivation et vos compétences.</p>
                     
-                    <div class="procedure-steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <h4>Contacter le Service</h4>
-                            <p>Envoyez un message au numéro WhatsApp dédié au recrutement</p>
+                    <!-- Formulaire pour initialiser WhatsApp -->
+                    <div id="whatsapp-form" style="max-width: 500px; margin: 0 auto; text-align: left;">
+                        <div class="form-group">
+                            <label for="candidat-nom">Nom complet *</label>
+                            <input type="text" class="form-control" id="candidat-nom" placeholder="Votre nom complet" required>
                         </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <h4>Préparer les Documents</h4>
-                            <p>Rassemblez tous les documents nécessaires</p>
+                        <div class="form-group">
+                            <label for="candidat-phone">Téléphone *</label>
+                            <input type="tel" class="form-control" id="candidat-phone" placeholder="Votre numéro WhatsApp" required>
                         </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <h4>Envoyer le Dossier</h4>
-                            <p>Transmettez l'ensemble du dossier complet</p>
+                        <div class="form-group">
+                            <label for="candidat-filiere">Filière souhaitée *</label>
+                            <select class="form-control" id="candidat-filiere" required>
+                                <option value="">Sélectionnez une filière</option>
+                                <option value="Sciences de Gestion">Sciences de Gestion</option>
+                                <option value="Sciences Informatiques">Sciences Informatiques</option>
+                                <option value="Sciences Juridiques">Sciences Juridiques</option>
+                            </select>
                         </div>
-                    </div>
-
-                    <h4 style="margin-top: 40px; color: var(--primary);">Documents à Fournir :</h4>
-                    <ul class="documents-list">
-                        <li>Curriculum Vitae détaillé (CV)</li>
-                        <li>Lettre de motivation manuscrite</li>
-                        <li>Photo d'identité récente</li>
-                        <li>Acte de naissance</li>
-                        <li>Copie certifiée des diplômes</li>
-                        <li>Attestations d'expérience professionnelle</li>
-                        <li>Copie de la carte nationale d'identité</li>
-                    </ul>
-
-                    <div style="text-align: center; margin-top: 40px;">
-                        <h4>Formulaire de Candidature : CV + Message</h4>
-                        <p>Votre candidature doit comprendre un CV complet accompagné d'un message présentant votre motivation et vos compétences.</p>
+                        <div class="form-group">
+                            <label for="candidat-niveau">Niveau d'enseignement *</label>
+                            <select class="form-control" id="candidat-niveau" required>
+                                <option value="">Sélectionnez un niveau</option>
+                                <option value="Licence 1-2">Licence 1 & 2</option>
+                                <option value="Licence 3">Licence 3</option>
+                                <option value="Master 1">Master 1</option>
+                                <option value="Master 2">Master 2</option>
+                                <option value="Programme Exécutif">Programme Exécutif</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="candidat-message">Message de motivation *</label>
+                            <textarea class="form-control" id="candidat-message" placeholder="Présentez brièvement votre profil et votre motivation..." rows="4" required></textarea>
+                        </div>
                         
-                        <a href="https://wa.me/24101234567?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20un%20poste%20d'enseignant%20à%20l'IPEA" class="contact-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Postuler via WhatsApp
-                        </a>
+                        <button type="button" id="envoyer-whatsapp" class="contact-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Envoyer ma candidature via WhatsApp
+                        </button>
                         
                         <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray);">
                             Numéro de contact : +241 01 23 45 67<br>
@@ -1678,282 +1486,266 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="page-section" id="about">
-            <div class="container">
-                <h2>À Propos de l'IPEA</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Notre Mission: Excellence Académique et Professionnelle</h3>
-                        <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
-                        <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
-                        <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
-                        <h4>Nos Valeurs :</h4>
-                        <ul class="formation-features">
-                            <li>Excellence académique</li>
-                            <li>Innovation pédagogique</li>
-                            <li>Professionnalisme</li>
-                            <li>Éthique et intégrité</li>
-                            <li>Ouverture internationale</li>
-                        </ul>
-                        <a href="#contact" class="btn" style="margin-top: 20px;">Nous Contacter</a>
-                    </div>
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Campus de l'IPEA">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Étudiants Section -->
-        <section class="page-section testimonials" id="etudiants">
-            <div class="container">
-                <h2>Témoignages d'Étudiants</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Étudiante">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"La formation en Comptabilité-Control de gestion à l'IPEA m'a offert une base solide théorique et pratique. J'ai été recrutée avant même l'obtention de mon diplôme."</p>
-                        <div class="client-name">Marie N'Dong</div>
-                        <div class="client-role">Diplômée en Sciences de Gestion</div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Étudiant">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Le programme de Développement Web est très pratique. Les projets réels avec des entreprises nous préparent parfaitement au marché du travail."</p>
-                        <div class="client-name">Jean Okouma</div>
-                        <div class="client-role">Étudiant en Informatique</div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="client-img">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Étudiante">
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p>"Les enseignants de Droit des Affaires sont des professionnels en activité. Leurs conseils et leur réseau sont inestimables pour notre insertion professionnelle."</p>
-                        <div class="client-name">Sarah Boussamba</div>
-                        <div class="client-role">Étudiante en Droit</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="page-section gallery" id="gallery">
-            <div class="container">
-                <h2>Galerie de l'IPEA</h2>
-                <div class="gallery-filters">
-                    <button class="filter-btn active" data-filter="all">Tous</button>
-                    <button class="filter-btn" data-filter="campus">Campus</button>
-                    <button class="filter-btn" data-filter="cours">Cours</button>
-                    <button class="filter-btn" data-filter="evenements">Événements</button>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-category="campus">
-                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Bibliothèque de l'IPEA</h3>
-                            <p>Espace de travail et de recherche</p>
-                        </div>
-                        <div class="gallery-category">Campus</div>
-                    </div>
-                    <div class="gallery-item" data-category="cours">
-                        <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours en salle" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Salle de Cours</h3>
-                            <p>Enseignement interactif et moderne</p>
-                        </div>
-                        <div class="gallery-category">Cours</div>
-                    </div>
-                    <div class="gallery-item" data-category="evenements">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Remise de diplômes" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Remise de Diplômes</h3>
-                            <p>Cérémonie de graduation annuelle</p>
-                        </div>
-                        <div class="gallery-category">Événements</div>
-                    </div>
-                    <div class="gallery-item" data-category="cours">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratoire informatique" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Laboratoire Informatique</h3>
-                            <p>Pratique sur équipements modernes</p>
-                        </div>
-                        <div class="gallery-category">Cours</div>
-                    </div>
-                    <div class="gallery-item" data-category="evenements">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conférence" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Conférence Professionnelle</h3>
-                            <p>Échanges avec des experts du secteur</p>
-                        </div>
-                        <div class="gallery-category">Événements</div>
-                    </div>
-                    <div class="gallery-item" data-category="campus">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espace détente" class="gallery-img">
-                        <div class="gallery-overlay">
-                            <h3>Espace de Détente</h3>
-                            <p>Zone de repos et d'échanges</p>
-                        </div>
-                        <div class="gallery-category">Campus</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <h2>Contactez l'IPEA</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Notre Adresse</h3>
-                                <p>Institut Panafricain des Études Appliquées<br>
-                                BP 1234, Libreville, Gabon</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3>Téléphone</h3>
-                                <p>+241 01 23 45 67 (Standard)<br>
-                                +241 01 23 45 68 (Admissions)</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3>Email</h3>
-                                <p>contact@ipea.education<br>
-                                admissions@ipea.education</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h3>Heures d'Ouverture</h3>
-                                <p>Lundi - Vendredi: 8h00 - 18h00<br>
-                                Samedi: 9h00 - 13h00<br>
-                                Dimanche: Fermé</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div>
-                                <h3>Admissions</h3>
-                                <p>Inscriptions ouvertes toute l'année pour les programmes en formation continue. Rentrée académique principale en septembre.</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Pièces à Fournir pour Inscription</h3>
-                                <p>• Formulaire d'inscription<br>
-                                • Copie des diplômes<br>
-                                • Extrait d'acte de naissance<br>
-                                • Photos d'identité<br>
-                                • Reçu de paiement des frais</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Votre nom complet" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Votre email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="phone" placeholder="Votre téléphone" required>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control" id="program" required>
-                                    <option value="">Domaine intéressé</option>
-                                    <option value="Sciences de Gestion">Sciences de Gestion</option>
-                                    <option value="Sciences Informatiques">Sciences Informatiques</option>
-                                    <option value="Sciences Juridiques">Sciences Juridiques</option>
-                                    <option value="Programme Exécutif">Programme Exécutif</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" placeholder="Votre message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn">
-                                <i class="fas fa-paper-plane"></i> Envoyer la demande
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <div class="bottom-nav-items">
-            <a href="#accueil" class="bottom-nav-item active" data-page="accueil">
-                <i class="fas fa-home"></i>
-                <span>Accueil</span>
-            </a>
-            <a href="#formations" class="bottom-nav-item" data-page="formations">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Formations</span>
-            </a>
-            <a href="#recrutement" class="bottom-nav-item" data-page="recrutement">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <span>Recrutement</span>
-            </a>
-            <a href="#about" class="bottom-nav-item" data-page="about">
-                <i class="fas fa-info-circle"></i>
-                <span>À propos</span>
-            </a>
-            <a href="#contact" class="bottom-nav-item" data-page="contact">
-                <i class="fas fa-phone"></i>
-                <span>Contact</span>
-            </a>
         </div>
-    </nav>
+    </section>
+
+    <!-- Campus Section -->
+    <section class="portfolio" id="campus">
+        <div class="container">
+            <h2>Notre Campus</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque universitaire" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Bibliothèque Centrale</h3>
+                        <p>Plus de 50,000 ouvrages et ressources numériques accessibles</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratoires informatiques" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Laboratoires Informatiques</h3>
+                        <p>Équipements high-tech pour la formation pratique</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Amphithéâtres modernes" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Salles de Cours Modernes</h3>
+                        <p>Salles équipées des dernières technologies pédagogiques</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espaces étudiants" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Espaces de Vie Étudiante</h3>
+                        <p>Restauration, détente et activités culturelles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Étudiants Section -->
+    <section class="testimonials" id="etudiants">
+        <div class="container">
+            <h2>Témoignages d'Étudiants</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Étudiante">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"La formation en Comptabilité-Control de gestion à l'IPEA m'a offert une base solide théorique et pratique. J'ai été recrutée avant même l'obtention de mon diplôme."</p>
+                    <div class="client-name">Marie N'Dong</div>
+                    <div class="client-role">Diplômée en Sciences de Gestion</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Étudiant">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Le programme de Développement Web est très pratique. Les projets réels avec des entreprises nous préparent parfaitement au marché du travail."</p>
+                    <div class="client-name">Jean Okouma</div>
+                    <div class="client-role">Étudiant en Informatique</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Étudiante">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Les enseignants de Droit des Affaires sont des professionnels en activité. Leurs conseils et leur réseau sont inestimables pour notre insertion professionnelle."</p>
+                    <div class="client-name">Sarah Boussamba</div>
+                    <div class="client-role">Étudiante en Droit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Galerie de l'IPEA</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="cours">Cours</button>
+                <button class="filter-btn" data-filter="evenements">Événements</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bibliothèque" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Bibliothèque de l'IPEA</h3>
+                        <p>Espace de travail et de recherche</p>
+                    </div>
+                    <div class="gallery-category">Campus</div>
+                </div>
+                <div class="gallery-item" data-category="cours">
+                    <img src="https://images.unsplash.com/photo-1519452639340-7f0d4e247719?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cours en salle" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Salle de Cours</h3>
+                        <p>Enseignement interactif et moderne</p>
+                    </div>
+                    <div class="gallery-category">Cours</div>
+                </div>
+                <div class="gallery-item" data-category="evenements">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Remise de diplômes" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Remise de Diplômes</h3>
+                        <p>Cérémonie de graduation annuelle</p>
+                    </div>
+                    <div class="gallery-category">Événements</div>
+                </div>
+                <div class="gallery-item" data-category="cours">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratoire informatique" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Laboratoire Informatique</h3>
+                        <p>Pratique sur équipements modernes</p>
+                    </div>
+                    <div class="gallery-category">Cours</div>
+                </div>
+                <div class="gallery-item" data-category="evenements">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conférence" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Conférence Professionnelle</h3>
+                        <p>Échanges avec des experts du secteur</p>
+                    </div>
+                    <div class="gallery-category">Événements</div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espace détente" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Espace de Détente</h3>
+                        <p>Zone de repos et d'échanges</p>
+                    </div>
+                    <div class="gallery-category">Campus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez l'IPEA</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Notre Adresse</h3>
+                            <p>Institut Panafricain des Études Appliquées<br>
+                            BP 1234, Libreville, Gabon</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>+241 01 23 45 67 (Standard)<br>
+                            +241 01 23 45 68 (Admissions)</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@ipea.education<br>
+                            admissions@ipea.education</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Heures d'Ouverture</h3>
+                            <p>Lundi - Vendredi: 8h00 - 18h00<br>
+                            Samedi: 9h00 - 13h00<br>
+                            Dimanche: Fermé</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>Admissions</h3>
+                            <p>Inscriptions ouvertes toute l'année pour les programmes en formation continue. Rentrée académique principale en septembre.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Pièces à Fournir pour Inscription</h3>
+                            <p>• Formulaire d'inscription<br>
+                            • Copie des diplômes<br>
+                            • Extrait d'acte de naissance<br>
+                            • Photos d'identité<br>
+                            • Reçu de paiement des frais</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Votre nom complet" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="phone" placeholder="Votre téléphone" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="program" required>
+                                <option value="">Domaine intéressé</option>
+                                <option value="Sciences de Gestion">Sciences de Gestion</option>
+                                <option value="Sciences Informatiques">Sciences Informatiques</option>
+                                <option value="Sciences Juridiques">Sciences Juridiques</option>
+                                <option value="Programme Exécutif">Programme Exécutif</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1976,7 +1768,7 @@
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#formations">Formations</a></li>
                         <li><a href="#recrutement">Recrutement Enseignants</a></li>
-                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#campus">Campus</a></li>
                         <li><a href="#etudiants">Témoignages</a></li>
                         <li><a href="#gallery">Galerie</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -2010,15 +1802,7 @@
     </footer>
 
     <script>
-        // Splash Screen Animation
         document.addEventListener('DOMContentLoaded', function() {
-            const splashScreen = document.getElementById('splash-screen');
-            
-            // Hide splash screen after animations complete
-            setTimeout(() => {
-                splashScreen.classList.add('fade-out');
-            }, 4000);
-
             // Counter Animation
             const counters = document.querySelectorAll('.counter-number');
             const speed = 200;
@@ -2096,66 +1880,62 @@ Institut Panafricain des Études Appliquées (IPEA)
                 this.reset();
             });
 
-            // Page Navigation System
-            const pageSections = document.querySelectorAll('.page-section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
-
-            function showPage(pageId) {
-                // Hide all pages
-                pageSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                // Show selected page
-                const activePage = document.getElementById(pageId);
-                if (activePage) {
-                    activePage.classList.add('active');
+            // WhatsApp Form pour recrutement
+            document.getElementById('envoyer-whatsapp').addEventListener('click', function() {
+                const nom = document.getElementById('candidat-nom').value;
+                const phone = document.getElementById('candidat-phone').value;
+                const filiere = document.getElementById('candidat-filiere').value;
+                const niveau = document.getElementById('candidat-niveau').value;
+                const message = document.getElementById('candidat-message').value;
+                
+                if (!nom || !phone || !filiere || !niveau || !message) {
+                    alert('Veuillez remplir tous les champs obligatoires.');
+                    return;
                 }
+                
+                // Numéro WhatsApp (à remplacer par le vrai numéro)
+                const whatsappNumber = '24101234567';
+                
+                // Construction du message WhatsApp
+                const whatsappMessage = `Bonjour,
 
-                // Update navigation links
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${pageId}`) {
-                        link.classList.add('active');
-                    }
-                });
+Je souhaite postuler pour un poste d'enseignant à l'IPEA.
 
-                // Update bottom navigation
-                bottomNavItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('data-page') === pageId) {
-                        item.classList.add('active');
-                    }
-                });
+*Informations personnelles :*
+- Nom complet : ${nom}
+- Téléphone : ${phone}
 
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+*Poste souhaité :*
+- Filière : ${filiere}
+- Niveau : ${niveau}
 
-            // Handle navigation clicks
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('href').substring(1);
-                    showPage(pageId);
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
-                });
+*Message de motivation :*
+${message}
+
+Je reste à votre disposition pour toute information complémentaire.
+
+Cordialement,
+${nom}`;
+
+                // Encodage du message pour URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Création du lien WhatsApp
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Ouverture dans une nouvelle fenêtre
+                window.open(whatsappUrl, '_blank');
+                
+                // Réinitialisation du formulaire
+                document.getElementById('candidat-nom').value = '';
+                document.getElementById('candidat-phone').value = '';
+                document.getElementById('candidat-filiere').value = '';
+                document.getElementById('candidat-niveau').value = '';
+                document.getElementById('candidat-message').value = '';
+                
+                // Message de confirmation
+                alert('Le formulaire a été rempli avec succès. Vous allez être redirigé vers WhatsApp pour envoyer votre candidature.');
             });
-
-            // Handle bottom navigation clicks
-            bottomNavItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('data-page');
-                    showPage(pageId);
-                });
-            });
-
-            // Set initial page
-            showPage('accueil');
         });
 
         // Menu Toggle
@@ -2174,6 +1954,27 @@ Institut Panafricain des Études Appliquées (IPEA)
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

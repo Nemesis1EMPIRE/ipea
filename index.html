@@ -33,6 +33,7 @@
             line-height: 1.6;
             color: var(--primary);
             background-color: var(--secondary);
+            padding-top: 80px; /* Pour compenser le header fixe */
         }
         
         .container {
@@ -43,10 +44,8 @@
         }
         
         .page-section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-height: calc(100vh - 80px);
+            padding: 80px 0;
             display: none;
         }
 
@@ -144,7 +143,6 @@
         
         header.scrolled {
             background-color: rgba(10, 46, 92, 0.95);
-            padding: 10px 0;
         }
         
         .navbar {
@@ -206,6 +204,8 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
         }
         
         .nav-links a:hover {
@@ -214,7 +214,16 @@
         
         .nav-links a.active {
             color: var(--accent);
-            border-bottom: 2px solid var(--accent);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
         }
         
         .menu-toggle {
@@ -226,29 +235,34 @@
         
         /* Page Accueil */
         #accueil {
-            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9)), url('logo.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9));
             color: var(--secondary);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        
+
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 100px 0;
-            background-color: rgba(10, 46, 92, 0.7);
-            border-radius: 10px;
-            padding: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            z-index: 1;
         }
         
         .hero-content h1 {
             margin-bottom: 20px;
-            font-size: 4rem;
+            font-size: 3.5rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--secondary);
@@ -262,10 +276,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
-        /* About Section dans Accueil */
+
         .about-section {
-            padding: 100px 0;
             background-color: var(--light);
         }
         
@@ -280,10 +292,15 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
         }
         
         .about-img img {
-            width: 100%;
+            width: 80%;
             height: auto;
             display: block;
             transition: var(--transition);
@@ -294,6 +311,10 @@
         }
         
         /* Formations Section */
+        .formations-section {
+            background-color: var(--secondary);
+        }
+
         .formations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -320,13 +341,24 @@
         
         .formation-img {
             height: 200px;
-            background-size: cover;
+            background-color: var(--primary);
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
+        .formation-img i {
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.8;
+        }
+
         .formation-card:hover .formation-img {
-            transform: scale(1.05);
+            background-color: var(--accent);
         }
         
         .formation-content {
@@ -386,7 +418,6 @@
         /* Recrutement Enseignants Section */
         .recrutement-section {
             background: linear-gradient(rgba(10, 46, 92, 0.05), rgba(10, 46, 92, 0.1));
-            padding: 100px 0;
         }
 
         .recrutement-intro {
@@ -433,6 +464,7 @@
             justify-content: center;
             font-size: 1.5rem;
             margin-right: 20px;
+            flex-shrink: 0;
         }
 
         .profile-list {
@@ -541,7 +573,6 @@
         
         /* Gallery Section */
         .gallery-section {
-            padding: 100px 0;
             background-color: var(--secondary);
         }
 
@@ -643,16 +674,12 @@
         
         /* Contact Section */
         .contact-section {
-            padding: 100px 0;
-            background: linear-gradient(rgba(10, 46, 92, 0.9), rgba(10, 46, 92, 0.95)), url('logo.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--secondary);
+            background: var(--light);
+            color: var(--primary);
         }
         
         .contact-section h2 {
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         .contact-section h2::after {
@@ -675,11 +702,15 @@
             display: flex;
             align-items: flex-start;
             gap: 15px;
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         .contact-icon {
-            background: var(--accent);
-            color: var(--primary);
+            background: var(--primary);
+            color: var(--secondary);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -691,7 +722,7 @@
         }
         
         .contact-form {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--secondary);
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -826,6 +857,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--light-gray);
             border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .filiere-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .filiere-category h3 {
@@ -870,6 +907,38 @@
             font-weight: 500;
             border: 1px solid var(--accent);
         }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: 2px solid var(--accent);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
         
         /* Responsive Design */
         @media (max-width: 992px) {
@@ -895,6 +964,11 @@
 
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .page-section {
+                padding: 60px 0;
+                min-height: auto;
             }
         }
         
@@ -949,6 +1023,10 @@
             .procedure-steps {
                 grid-template-columns: 1fr;
             }
+
+            body {
+                padding-top: 70px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -982,8 +1060,24 @@
                 height: 50px;
             }
             
-            .hero-content {
-                padding: 30px 20px;
+            .about-img {
+                height: 300px;
+            }
+
+            .profile-card, .filiere-category {
+                padding: 20px;
+            }
+
+            .step {
+                padding: 20px;
+            }
+
+            .contact-item {
+                padding: 15px;
+            }
+
+            .page-section {
+                padding: 40px 0;
             }
         }
     </style>
@@ -996,7 +1090,8 @@
                 <div class="logo-container">
                     <div class="logo-text">
                         <a href="#accueil" class="logo">IP<span>EA</span></a>
-                   </div>
+                        <div class="logo-subtitle">Institut Panafricain des Études Appliquées</div>
+                    </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#accueil" class="nav-link active">Accueil</a></li>
@@ -1012,36 +1107,27 @@
         </div>
     </header>
 
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <!-- Page Sections -->
     <main id="page-content">
         <!-- Accueil Section -->
-        <section id="accueil" class="page-section">
+        <section id="accueil" class="page-section active">
+            <div class="hero-bg"></div>
             <div class="container">
-                <h2>À Propos de l'IPEA</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Notre Mission: Excellence Académique et Professionnelle</h3>
-                        <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
-                        <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
-                        <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
-                        <h4>Nos Valeurs :</h4>
-                        <ul class="formation-features">
-                            <li>Excellence académique</li>
-                            <li>Innovation pédagogique</li>
-                            <li>Professionnalisme</li>
-                            <li>Éthique et intégrité</li>
-                            <li>Ouverture internationale</li>
-                        </ul>
-                    </div>
-                    <div class="about-img">
-                        <img src="logo.png" alt="Logo IPEA">
-                    </div>
+                <div class="hero-content">
+                    <h1>Institut Panafricain des Études Appliquées</h1>
+                    <p>Excellence académique et professionnelle en Sciences de Gestion, Informatique et Sciences Juridiques</p>
+                    <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
                 </div>
             </div>
         </section>
 
         <!-- Formations Section -->
-        <section id="formations" class="page-section">
+        <section id="formations" class="page-section formations-section">
             <div class="container">
                 <h2>Nos Formations</h2>
                 
@@ -1099,7 +1185,9 @@
                 <div class="formations-grid">
                     <!-- Sciences de Gestion -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('logo.png');"></div>
+                        <div class="formation-img">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <div class="formation-content">
                             <h3>Sciences de Gestion</h3>
                             <p>Formation complète en gestion d'entreprise, finance, marketing et management.</p>
@@ -1123,7 +1211,9 @@
 
                     <!-- Sciences Informatiques -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('logo.png');"></div>
+                        <div class="formation-img">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                         <div class="formation-content">
                             <h3>Sciences Informatiques</h3>
                             <p>Formations techniques en développement, réseaux et sécurité informatique.</p>
@@ -1147,7 +1237,9 @@
 
                     <!-- Sciences Juridiques -->
                     <div class="formation-card">
-                        <div class="formation-img" style="background-image: url('logo.png');"></div>
+                        <div class="formation-img">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
                         <div class="formation-content">
                             <h3>Sciences Juridiques</h3>
                             <p>Programmes d'excellence en droit gabonais, international et des affaires.</p>
@@ -1662,7 +1754,7 @@ ${message}
                 alert("Votre candidature a été préparée. Vous allez être redirigé vers WhatsApp pour l'envoyer.");
             });
 
-            // Page Navigation System
+            // Single Page Navigation System
             const pageSections = document.querySelectorAll('.page-section');
             const navLinks = document.querySelectorAll('.nav-link');
 
@@ -1686,8 +1778,8 @@ ${message}
                     }
                 });
 
-                // Smooth scroll to top of page
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Update URL hash without scrolling
+                history.pushState(null, null, `#${pageId}`);
             }
 
             // Handle navigation clicks
@@ -1702,50 +1794,58 @@ ${message}
                 });
             });
 
-            // Set initial page
-            showPage('accueil');
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                const hash = window.location.hash.substring(1) || 'accueil';
+                showPage(hash);
+            });
 
-            // Smooth scrolling for anchor links within same page
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Only handle same-page anchors (not page navigation)
-                    if (href.startsWith('#') && href !== '#accueil' && 
-                        href !== '#formations' && href !== '#recrutement' && 
-                        href !== '#gallery' && href !== '#contact') {
-                        e.preventDefault();
-                        
-                        const targetId = href.substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
+            // Set initial page based on URL hash
+            const initialPage = window.location.hash.substring(1) || 'accueil';
+            showPage(initialPage);
+
+            // Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinksElement = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', () => {
+                navLinksElement.classList.toggle('active');
+            });
+            
+            // Header Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Back to top button
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // Back to top functionality
+            document.getElementById('backToTop').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').classList.remove('active');
                     }
                 });
             });
-        });
-
-        // Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
         });
     </script>
 </body>

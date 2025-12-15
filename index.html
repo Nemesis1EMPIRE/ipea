@@ -33,7 +33,6 @@
             line-height: 1.6;
             color: var(--primary);
             background-color: var(--secondary);
-            padding-top: 80px; /* Pour compenser le header fixe */
         }
         
         .container {
@@ -128,8 +127,18 @@
             color: var(--accent);
         }
         
-        /* Header et Navigation */
+        /* Header avec Hero intégré */
         header {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(10, 46, 92, 0.9), rgba(10, 46, 92, 0.8)), url('logo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--secondary);
+        }
+
+        .header-nav {
             position: fixed;
             top: 0;
             left: 0;
@@ -138,10 +147,9 @@
             background-color: var(--primary);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
-            color: var(--secondary);
         }
         
-        header.scrolled {
+        .header-nav.scrolled {
             background-color: rgba(10, 46, 92, 0.95);
         }
         
@@ -232,31 +240,15 @@
             cursor: pointer;
             color: var(--secondary);
         }
-        
-        /* Page Accueil */
-        #accueil {
-            background: linear-gradient(rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.9));
-            color: var(--secondary);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-bg {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             width: 100%;
-            height: 100%;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.1;
+            padding: 0 20px;
             z-index: 1;
         }
         
@@ -266,48 +258,105 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             opacity: 0.9;
-            max-width: 700px;
+            line-height: 1.8;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .about-section {
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Section À Propos - Première section du contenu principal */
+        #apropos {
             background-color: var(--light);
         }
-        
-        .about-content {
+
+        .apropos-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
-        
-        .about-img {
+
+        .apropos-text h2 {
+            text-align: left;
+        }
+
+        .apropos-text h2::after {
+            left: 0;
+            transform: none;
+        }
+
+        .mission-highlight {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .valeurs-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .valeurs-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .valeurs-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .apropos-img {
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            height: 400px;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--primary);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            position: relative;
         }
-        
-        .about-img img {
-            width: 80%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
+
+        .apropos-img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('logo.png');
+            background-size: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
         }
         
         /* Formations Section */
@@ -950,12 +999,13 @@
                 font-size: 2.2rem;
             }
             
-            .about-content, .contact-content {
+            .apropos-content, .contact-content {
                 grid-template-columns: 1fr;
             }
             
-            .about-img {
+            .apropos-img {
                 order: -1;
+                height: 400px;
             }
             
             .profiles-grid {
@@ -969,6 +1019,19 @@
             .page-section {
                 padding: 60px 0;
                 min-height: auto;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .apropos-text h2 {
+                text-align: center;
+            }
+
+            .apropos-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
         
@@ -1004,7 +1067,7 @@
             }
             
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero-content p {
@@ -1024,8 +1087,23 @@
                 grid-template-columns: 1fr;
             }
 
-            body {
-                padding-top: 70px;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .apropos-text h2 {
+                text-align: center;
+            }
+
+            .apropos-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
         
@@ -1060,7 +1138,7 @@
                 height: 50px;
             }
             
-            .about-img {
+            .apropos-img {
                 height: 300px;
             }
 
@@ -1079,31 +1157,51 @@
             .page-section {
                 padding: 40px 0;
             }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .mission-highlight {
+                font-size: 1rem;
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo-container">
-                    <div class="logo-text">
-                        <a href="#accueil" class="logo">IP<span>EA</span></a>
-                        <div class="logo-subtitle">Institut Panafricain des Études Appliquées</div>
+    <!-- Header avec Hero intégré -->
+    <header>
+        <nav class="header-nav" id="headerNav">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo-container">
+                        <div class="logo-text">
+                            <a href="#" class="logo">IP<span>EA</span></a>
+                            <div class="logo-subtitle">Institut Panafricain des Études Appliquées</div>
+                        </div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#apropos" class="nav-link">Accueil</a></li>
+                        <li><a href="#formations" class="nav-link">Formations</a></li>
+                        <li><a href="#recrutement" class="nav-link">Recrutement</a></li>
+                        <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
                     </div>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
-                    <li><a href="#formations" class="nav-link">Formations</a></li>
-                    <li><a href="#recrutement" class="nav-link">Recrutement</a></li>
-                    <li><a href="#gallery" class="nav-link">Galerie</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Institut Panafricain des Études Appliquées</h1>
+            <p>Excellence académique et professionnelle en Sciences de Gestion, Informatique et Sciences Juridiques depuis plus de 15 ans.</p>
+            <div class="cta-buttons">
+                <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
+                <a href="#contact" class="btn btn-outline">Nous contacter</a>
+            </div>
         </div>
     </header>
 
@@ -1112,22 +1210,44 @@
         <i class="fas fa-chevron-up"></i>
     </div>
 
-    <!-- Page Sections -->
+    <!-- Contenu principal -->
     <main id="page-content">
-        <!-- Accueil Section -->
-        <section id="accueil" class="page-section active">
-            <div class="hero-bg"></div>
+        <!-- Section À Propos (Première section après le hero) -->
+        <section id="apropos" class="page-section active">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Institut Panafricain des Études Appliquées</h1>
-                    <p>Excellence académique et professionnelle en Sciences de Gestion, Informatique et Sciences Juridiques</p>
-                    <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
+                <div class="apropos-content">
+                    <div class="apropos-text">
+                        <h2>À Propos de nous</h2>
+                        
+                        <div class="mission-highlight">
+                            Notre Mission : qualité d'enseignement, suivis personnalisé de chaque étudiant et accompagnement dans le monde professionnel
+                        </div>
+                        
+                        <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
+                        
+                        <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
+                        
+                        <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
+                        
+                        <h3>Nos Valeurs :</h3>
+                        <ul class="valeurs-list">
+                            <li>Excellence académique</li>
+                            <li>Innovation pédagogique</li>
+                            <li>Professionnalisme</li>
+                            <li>Éthique et intégrité</li>
+                            <li>Ouverture internationale</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="apropos-img">
+                        <!-- L'image de logo est ajoutée via CSS -->
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Formations Section -->
-        <section id="formations" class="page-section formations-section">
+        <section id="formations" class="page-section">
             <div class="container">
                 <h2>Nos Formations</h2>
                 
@@ -1265,7 +1385,7 @@
         </section>
 
         <!-- Recrutement Enseignants Section -->
-        <section id="recrutement" class="page-section recrutement-section">
+        <section id="recrutement" class="page-section">
             <div class="container">
                 <h2>Recrutement Enseignants</h2>
                 
@@ -1446,7 +1566,7 @@
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="page-section gallery-section">
+        <section id="gallery" class="page-section">
             <div class="container">
                 <h2>Galerie de l'IPEA</h2>
                 <div class="gallery-filters">
@@ -1509,7 +1629,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="page-section contact-section">
+        <section id="contact" class="page-section">
             <div class="container">
                 <h2>Contactez l'IPEA</h2>
                 <div class="contact-content">
@@ -1622,7 +1742,7 @@
                 <div class="footer-column">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">Accueil</a></li>
                         <li><a href="#formations">Formations</a></li>
                         <li><a href="#recrutement">Recrutement Enseignants</a></li>
                         <li><a href="#gallery">Galerie</a></li>
@@ -1778,7 +1898,25 @@ ${message}
                     }
                 });
 
-                // Update URL hash without scrolling
+                // Scroll to section if not the first one (apropos)
+                if (pageId !== 'apropos') {
+                    const targetSection = document.getElementById(pageId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    // For "apropos" section, scroll just below the header
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    window.scrollTo({
+                        top: headerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Update URL hash
                 history.pushState(null, null, `#${pageId}`);
             }
 
@@ -1796,12 +1934,12 @@ ${message}
 
             // Handle browser back/forward buttons
             window.addEventListener('popstate', function() {
-                const hash = window.location.hash.substring(1) || 'accueil';
+                const hash = window.location.hash.substring(1) || 'apropos';
                 showPage(hash);
             });
 
             // Set initial page based on URL hash
-            const initialPage = window.location.hash.substring(1) || 'accueil';
+            const initialPage = window.location.hash.substring(1) || 'apropos';
             showPage(initialPage);
 
             // Menu Toggle
@@ -1814,11 +1952,11 @@ ${message}
             
             // Header Scroll Effect
             window.addEventListener('scroll', () => {
-                const header = document.getElementById('header');
+                const headerNav = document.getElementById('headerNav');
                 if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
+                    headerNav.classList.add('scrolled');
                 } else {
-                    header.classList.remove('scrolled');
+                    headerNav.classList.remove('scrolled');
                 }
 
                 // Back to top button

@@ -44,6 +44,9 @@
         
         .page-section {
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             display: none;
         }
 
@@ -994,8 +997,7 @@
                     <img src="logo.png" alt="Logo IPEA" class="logo-img">
                     <div class="logo-text">
                         <a href="#accueil" class="logo">IP<span>EA</span></a>
-                        <div class="logo-subtitle">Institut Panafricain des Études Appliquées</div>
-                    </div>
+                   </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#accueil" class="nav-link active">Accueil</a></li>
@@ -1013,37 +1015,38 @@
 
     <!-- Page Sections -->
     <main id="page-content">
-        <!-- Accueil Section (contient Hero + À propos) -->
+        <!-- Accueil Section -->
         <section id="accueil" class="page-section active">
-            <!-- Hero Section -->
-            <div class="hero-content">
-                <h1>Institut Panafricain des Études Appliquées</h1>
-                <p>Centre d'excellence académique et professionnel formant les leaders de demain en Sciences de Gestion, Informatique et Sciences Juridiques. Notre mission est de combiner savoir théorique et compétences pratiques pour répondre aux défis du marché.</p>
-                <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Institut Panafricain des Études Appliquées</h1>
+                    <p>Centre d'excellence académique et professionnel formant les leaders de demain en Sciences de Gestion, Informatique et Sciences Juridiques. Notre mission est de combiner savoir théorique et compétences pratiques pour répondre aux défis du marché.</p>
+                    <a href="#formations" class="btn btn-accent">Découvrir nos formations</a>
+                </div>
             </div>
-            
-            <!-- About Section (uniquement dans accueil) -->
-            <div class="about-section">
-                <div class="container">
-                    <h2>À Propos de l'IPEA</h2>
-                    <div class="about-content">
-                        <div class="about-text">
-                            <h3>Notre Mission: Excellence Académique et Professionnelle</h3>
-                            <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
-                            <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
-                            <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
-                            <h4>Nos Valeurs :</h4>
-                            <ul class="formation-features">
-                                <li>Excellence académique</li>
-                                <li>Innovation pédagogique</li>
-                                <li>Professionnalisme</li>
-                                <li>Éthique et intégrité</li>
-                                <li>Ouverture internationale</li>
-                            </ul>
-                        </div>
-                        <div class="about-img">
-                            <img src="logo.png" alt="Logo IPEA">
-                        </div>
+        </section>
+
+        <!-- About Section (dans Accueil) -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>À Propos de l'IPEA</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Notre Mission: Excellence Académique et Professionnelle</h3>
+                        <p>L'Institut Panafricain des Études Appliquées (IPEA) est un établissement d'enseignement supérieur privé reconnu pour son excellence académique et son approche professionnalisante. Fondé avec pour objectif de répondre aux besoins du marché de l'emploi, l'IPEA combine savoir théorique et compétences pratiques.</p>
+                        <p>Notre pédagogie innovante met l'accent sur l'apprentissage par la pratique, les études de cas réels et les stages en entreprise. Nous préparons nos étudiants à réussir dans un environnement professionnel compétitif et en constante évolution.</p>
+                        <p>Avec un corps professoral composé d'universitaires renommés et de professionnels expérimentés, l'IPEA offre une formation de qualité adaptée aux défis économiques et technologiques du 21ème siècle.</p>
+                        <h4>Nos Valeurs :</h4>
+                        <ul class="formation-features">
+                            <li>Excellence académique</li>
+                            <li>Innovation pédagogique</li>
+                            <li>Professionnalisme</li>
+                            <li>Éthique et intégrité</li>
+                            <li>Ouverture internationale</li>
+                        </ul>
+                    </div>
+                    <div class="about-img">
+                        <img src="logo.png" alt="Logo IPEA">
                     </div>
                 </div>
             </div>
